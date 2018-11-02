@@ -1,0 +1,390 @@
+/**index.wxss**/
+
+page {
+  background-color: #fff;
+}
+
+.my_head {
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #fff;
+}
+
+.my_head button {
+  font-size: 20px;
+  padding: 5px 14px;
+  border-radius: 25px;
+  margin-left: 80px;
+}
+
+.my_head button::after {
+  border: none;
+}
+
+.my_head_bg {
+  position: absolute;
+  width: 100%;
+  height: 150px;
+}
+
+.my_head_img {
+  display: flex;
+  justify-content: flex-end;
+  width: 28%;
+  z-index: 9;
+}
+
+.my_head_img .img {
+  display: block;
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.my_head_info {
+  padding-left: 5%;
+  z-index: 9;
+}
+
+.my_head_info view {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.my_level {
+  padding: 0 8px;
+  border-radius: 20px;
+  background-color: #00a7d0;
+}
+
+.my_order {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
+  line-height: 50px;
+  width: 90%;
+  margin: 0 auto;
+  border-bottom: 1px solid #eee;
+}
+
+.step_in_words {
+  color: grey;
+  padding-right: 5px;
+}
+
+.step_in_words1 {
+  color: red;
+  padding-right: 5px;
+}
+
+.step_in {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}
+
+.order_menu {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  margin: 0 auto;
+  padding-top: 5px;
+  border-bottom: 10px solid #eee;
+}
+
+.order_menu navigator {
+  width: 25%;
+  height: 70px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order_menu navigator image {
+  width: 25px;
+  height: 20px;
+}
+
+.other-navigator-hover {
+  color: red;
+}
+
+.my_order1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
+  line-height: 50px;
+  width: 90%;
+  margin: 0 auto;
+  border-bottom: 1px solid #eee;
+}
+
+.my_order_class {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.tobereceived_num {
+  background-color: red;
+  color: #fff;
+  position: absolute;
+  border-radius: 50%;
+  padding: 0 5px;
+  margin-top: -50px;
+  margin-left: 30px;
+  font-size: 12px;
+}
+
+.awardPage {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.close_award {
+  width: 30px;
+  height: 30px;
+}
+
+.awardPicture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.txt {
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+}
+
+.awardBtn button {
+  height: 35px;
+  line-height: 35px;
+  margin-top: 10px;
+  background-color: yellow;
+  color: red;
+}
+
+.award_announce {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50px;
+  border-bottom: 1px solid #eee;
+  padding: 0 3%;
+  overflow: hidden;
+}
+
+/* 公告 */
+
+.gonggao {
+  flex: auto;
+  height: 25px;
+  overflow: hidden;
+}
+
+.gonggao1 {
+  display: flex;
+  align-items: center;
+}
+
+.announce {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: perspective(400px) rotatex(0deg) rotatey(0deg); /*拥有近大远小透视效果*/
+  transform-style: preserve-3d; /*设置为3d空间*/
+  position: relative;
+}
+
+.announce view {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #fff;
+}
+
+.announce view text {
+  line-height: 25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 475rpx;
+}
+
+.award {
+  margin-right: 5px;
+  width: 64px;
+  height: 16px;
+  flex: none;
+}
+
+.award_user {
+  display: block;
+  overflow: hidden;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  margin: 0 5px 0 10px;
+}
+
+.menu_item {
+  width: 33%;
+  height: 120px;
+  text-align: center;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  float: left;
+}
+
+.right_bottom::after {
+  content: '';
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  margin-top: 30rpx;
+  margin-left: 90rpx;
+}
+
+.right_bottom_half::after {
+  content: '';
+  width: 30px;
+  height: 15px;
+  background: #fff;
+  border-radius: 30px 30px 0 0;
+  position: absolute;
+  margin-top: 30rpx;
+  margin-left: 90rpx;
+}
+
+.menu_content {
+  padding-top: 30px;
+}
+
+.menu_content image {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 13px;
+}
+
+.menu {
+  display: inline-block;
+  padding-top: 10px;
+  width: 100%;
+}
+
+.menu navigator {
+  display: unset;
+}
+
+.my_exp {
+  width: 8px;
+  height: 8px;
+  background-color: red;
+  color: #fff;
+  position: absolute;
+  border-radius: 50%;
+  /* padding: 0 5px; */
+  margin-top: -65px;
+  margin-left: 65px;
+  /* font-size: 12px; */
+}
+
+.online_service {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 80px;
+  right: 0;
+  width: 80px;
+  background-color: #2fcafa;
+  padding: 8px 10px;
+  color: white;
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 25px;
+}
+
+.upload_exp button::after{
+  border: none
+}
+.upload_exp button{
+  padding:0;
+  line-height:unset;
+  font-size:16px;
+  background:unset;
+  color:#fff;
+}
+
+.auth {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  top: 0;
+  position: fixed;
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth_box {
+  width: 500rpx;
+  height: 300rpx;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.auth_words {
+  flex: auto;
+  text-align: center;
+  line-height: 104px;
+  font-size: 18px;
+  color: #666;
+  border: 1px solid #e3e3e3;
+  border-bottom: none;
+  border-radius: 5px;
+}
+
+.auth_box button {
+  width: 100%;
+  border-radius: 0;
+  background: #2fcafa;
+  color: #fff;
+  border: none;
+}
+
+.follow_gzh{
+  display: unset;
+  padding: unset;
+  font-size: unset;
+  line-height: unset;
+}
+.follow_gzh1{
+  display:flex;
+  height:100%;
+  width:100%;
+  position:fixed;
+  z-index:9;
+  top:0;
+  justify-content:flex-end;
+  /* align-items:center; */
+  background:rgba(0,0,0,.3);
+}

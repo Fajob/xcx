@@ -1,0 +1,42 @@
+<!--pages/shareTop/shareTop.wxml-->
+<view class='rule'>
+  <view>
+    {{desc}}
+  </view>
+</view>
+<!-- <view class='award'>
+  <view>
+    <text space='nbsp'>上周奖励    </text>
+    <view wx:if='{{tops}}' style='display:inline-block;font-size:12px;overflow:hidden;text-overflow:ellipsis;width:70%;white-space:nowrap;line-height:12px;'>用户<text wx:for='{{tops}}' wx:key='{{index}}'>{{item.nick}}</text>直推{{topNum}}人获第一名奖励50红包</view>
+  </view>
+</view>  -->
+<view class='rank_list'>
+  <view class='table'>
+    <view class='tr'>
+      <view class='th'>本周排名</view>
+      <view class='th' style='text-align:center;'>用户</view>
+      <view class='th' style='text-align:right;'>本周邀请(人)</view>
+    </view>
+    <view wx:for='{{ranks}}' wx:key='{{index}}' class='tr {{index%2==0?"oushu":""}}'>
+      <view wx:if='{{item.rank == 1}}' class='td ranking'><image src='{{pictureUrl}}first.png'></image></view>
+      <view wx:elif='{{item.rank == 2}}' class='td ranking'><image src='{{pictureUrl}}second.png'></image></view>
+      <view wx:elif='{{item.rank == 3}}' class='td ranking'><image src='{{pictureUrl}}third.png'></image></view>
+      <view wx:else class='td ranking'><view style='margin-left:50rpx;'>{{item.rank}}</view></view>
+      <view class='td'>{{item.nick}}</view>
+      <view class='td'>{{item.num}}</view>
+    </view>
+  </view>
+</view>
+<view class='footer'>
+  <view>
+    <view>
+      <text>排名 </text>
+      <text style='color:red;'>{{myRank.my_zhitui_rank}}</text>
+    </view>
+    <view>我的</view>
+    <view>
+      <text>邀请(人) </text>
+      <text style='color:red;'>{{myRank.my_zhitui_num}}</text>
+    </view>
+  </view>
+</view>

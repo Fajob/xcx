@@ -1,0 +1,40 @@
+<view class='order_list_item1_line1'>
+  <view>
+    <image src=''></image>
+  </view>
+  <view class='order_list_item1_line1_info'>
+    <text style='color:#2fcafa;'>已出库</text>
+    <text style='font-size:14px;'>顺丰快递：2525554556854</text>
+    <text style='font-size:14px;'>官方电话：95599</text>
+  </view>
+</view>
+<view class='logistics_address'>
+  【收货地址】段时间大家实打实肯德基熬淡3B9638号
+</view>
+<view class='logistics_detail current'>
+  <view class='circle_icon'>
+    <view class='curCircle'></view>
+  </view>
+  <view class='curInfo'>
+    <text>打死打死打近代史可</text>
+    <text style='font-size:12px;'>2018-07-07 22:02:05</text>
+  </view>
+</view>
+<view class='logistics_detail'>
+  <view class='circle_icon'>
+    <view class='circle1'></view>
+  </view>
+  <view class='info'>
+    <text>打死打死打近代史可</text>
+    <text style='font-size:12px;'>2018-07-07 22:02:05</text>
+  </view>
+</view>
+<view class='logistics_detail'>
+  <view class='circle_icon'>
+    <view class='circle'></view>
+  </view>
+  <view class='info'>
+    <text>打死打死打近代史可</text>
+    <text style='font-size:12px;'>2018-07-07 22:02:05</text>
+  </view>
+</view>

@@ -1,0 +1,11 @@
+@import "../public/order.wxss";
+
+.goPayBtn {
+  background: #fff;
+  border: 1px solid #0d96ff;
+  color: #0d96ff;
+  height: 30px;
+}
+.con_column_left {
+  justify-content: space-around;
+}

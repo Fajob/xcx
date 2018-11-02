@@ -1,0 +1,24 @@
+.detailList{
+    width: 100%;
+    height: 140rpx;
+    margin-top: 15rpx;
+    background-color: #fff;
+    justify-content: space-between;
+}
+.detailList text{
+    line-height: 50rpx;
+}
+.detailTime{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    font-size: 14px;
+    margin-left: 10px;
+}
+.detailType{
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    margin-right: 10px;
+    align-items: flex-end;
+}

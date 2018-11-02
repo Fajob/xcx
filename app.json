@@ -1,0 +1,71 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/auth/auth",
+    "pages/logs/logs",
+    "pages/experience/experience",
+    "pages/uploadExperience/uploadExperience",
+    "pages/experienceDetail/experienceDetail",
+    "pages/myExperience/myExperience",
+    "pages/myOrderSettlement/myOrderSettlement",
+    "pages/properties/properties",
+    "pages/myOrder/myOrder",
+    "pages/myOrderTitle/myOrderTitle",
+    "pages/myOrderDetail/myOrderDetail",
+    "pages/address/address",
+    "pages/addAddress/addAddress",
+    "pages/agency/agency",
+    "pages/agencyOrderDetail/agencyOrderDetail",
+    "pages/agencyAddress/agencyAddress",
+    "pages/agencyApply/agencyApply",
+    "pages/agencyApplication/agencyApplication",
+    "pages/stocks/stocks", 
+    "pages/onlineService/onlineService",
+    "pages/refundable/refundable",
+    "pages/myCredit/myCredit",
+    "pages/creditWithdraw/creditWithdraw",
+    "pages/creditInstruction/creditInstruction",
+    "pages/withdrawCash/withdrawCash",
+    "pages/withdrawDetail/withdrawDetail",
+    "pages/myBalance/myBalance",
+    "pages/logistics/logistics",
+    "pages/applyRefund/applyRefund",
+    "pages/comment/comment",
+    "pages/commentList/commentList",
+    "pages/awardResult/awardResult",
+    "pages/myShare/myShare",
+    "pages/shareTop/shareTop"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#2fcafa",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "selectedColor": "#04cbff",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/properties/properties",
+        "text": "产品",
+        "iconPath": "icon/tabbar/normal/properties_dark.png",
+        "selectedIconPath": "icon/tabbar/selected/properties_light.png"
+      },
+      {
+        "pagePath": "pages/experience/experience",
+        "text": "体验",
+        "iconPath": "icon/tabbar/normal/comment_dark.png",
+        "selectedIconPath": "icon/tabbar/selected/comment_light.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的",
+        "iconPath": "icon/tabbar/normal/mine_dark.png",
+        "selectedIconPath": "icon/tabbar/selected/mine_light.png"
+      }
+    ]
+  }
+}

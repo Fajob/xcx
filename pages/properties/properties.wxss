@@ -1,0 +1,319 @@
+/* pages/properties/properties.wxss */
+swiper{
+  height: 340px;
+  background-color: #fff;
+}
+swiper image{
+  height: 340px;
+  width: 100%;
+}
+.swiper_notice{
+  width: 50px;
+  line-height: 25px;
+  border-radius: 25px;
+  text-align: center;
+  background: rgba(0, 0, 0, .3);
+  color: #fff;
+  float:right;
+  margin-top:-40px;
+  z-index:99;
+  position:relative;
+  margin-right:10px;
+}
+.info1{
+  padding:15px 10px;
+  background-color:#fff;
+  display:flex;
+  justify-content: space-between;
+}
+.info2{
+  padding:0 10px 10px 10px;
+  background-color:#fff;
+  line-height:25px;
+}
+.info3{
+  background-color:#f2f5f8;
+  height:40px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+/* 未选中的 背景样式 */
+checkbox .wx-checkbox-input{
+   border-radius: 50%;/* 圆角 */
+   width: 30rpx; /* 背景的宽 */
+   height: 30rpx; /* 背景的高 */
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+  border-color: red;
+  background: unset;  
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+   border-radius: 50%;/* 圆角 */
+   width: 40rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   height: 40rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   line-height: 40rpx;
+   text-align: center;
+   font-size:30rpx; /* 对勾大小 30rpx */
+   color:red; /* 对勾颜色 白色 */
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}
+.info4{
+  padding: 0 10px 15px 10px;
+  background-color: #fff;
+}
+.info4 text{
+  display: block;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  color: gray;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+}
+video{
+  width: 100%;
+}
+.play_btn{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin: -40% 40%;
+}
+.play_btn image{
+  width: 50px;
+  height: 50px;
+}
+.info5 image{
+  width: 100%;
+  /* height: 5000px; */
+}
+.btn{
+  display: flex;
+  padding: 5px 0;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999;
+}
+.btn view{
+  margin: 0 auto;
+}
+.btn button:first-child{
+  background-color: orange;
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 25px;
+}
+.btn button:last-child{
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+}
+.btn button{
+  width: 140px;
+  height:35px;
+  line-height:35px;
+  border-radius: 0;
+  float: left;
+}
+.controls{
+  background-color: #fff;
+  height: 100%; 
+}
+/*立即购买  */
+.masklayer{
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  background: rgba(0, 0, 0, .3);
+  width: 100%;
+  height: 100%;
+}
+.buynow{
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.buynow1{
+  display: flex;
+  padding: 0 15px;
+  min-height: 110px;
+  border-bottom: 1px solid #eee;
+}
+.buynow1 image{
+  width: 80px;
+  height: 80px;
+  align-self: center;
+  margin-right: 10px;
+}
+.buynow1_close{
+  font-size: 18px;
+  text-align: right;
+}
+.buynow1_right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: auto;
+}
+.buynow2{
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+}
+.buynow2 view{
+  border: 1px solid gray;
+  width: 90px;
+  text-align: center;
+  color: gray;
+  border-radius: 5px;
+  line-height: 25px;
+}
+.choosen{
+  border-color: #2fcafa !important;
+  color: #fff !important;
+  background-color: #2fcafa;
+}
+.buynow3{
+  width: 90%;
+  margin: 0 auto;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+.add_del text{
+  display: inline-block;
+  min-width: 20px;
+  text-align: center;
+}
+.buybtn{
+  width: 100%;
+  line-height: 50px;
+  text-align: center;
+  background-color: #fd0047;
+  color: #fff;
+}
+.bigV{
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, .3);
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+}
+.bigV video{
+  width: 100%;
+  margin-top: 50%;
+}
+.close{
+  position: absolute;
+  font-size:32px;
+  margin-left: 90%;
+  color:#fff;
+}
+/* 产品评价 */
+.comment{
+  background-color: #fff;
+  color: gray;
+  margin-bottom: 10px;
+}
+.comment1{
+  padding: 0 10px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  line-height: 50px;
+  justify-content: space-between;
+}
+.comment1 view:last-child{
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+.comment1 view:last-child image{
+  height: 14px;
+  width: 16px;
+  margin-left: 5px;
+}
+.comment2{
+  padding: 0 10px;
+  padding-bottom: 15px;
+}
+.comment2_user {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  align-items: center;
+  color: gray;
+}
+
+.comment2_avatar {
+  display: flex;
+  align-items: center;
+}
+
+.comment2_avatar image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.comment2_img{
+  display: flex;
+}
+.comment2_img image{
+  margin-right: 10px;
+  width: 70px;
+  height: 70px;
+}
+.comment2_txt{
+  line-height: 20px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.auth{
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  top: 0;
+  position: fixed;
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.auth_box{
+  width: 500rpx;
+  height: 300rpx;
+  background: #fff;
+  border-radius: 5px;
+}
+.auth_words{
+  flex:auto;
+  text-align:center;
+  line-height:104px;
+  font-size:18px;
+  color:#666;
+  border: 1px solid #e3e3e3;
+  border-bottom: none;
+  border-radius: 5px;
+}
+.auth_box button{
+  width:100%;
+  border-radius:0;
+  background:#2fcafa;
+  color:#fff;
+  border:none;
+}

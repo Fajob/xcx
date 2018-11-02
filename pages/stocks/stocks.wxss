@@ -1,0 +1,63 @@
+/* pages/stocks/stocks.wxss */
+page{
+  background: #fff;
+}
+.head{
+  width: 100%;
+  height: auto;
+  border-bottom: 10px solid #eee;
+}
+.title{
+  padding: 0 10px;
+  line-height: 50px;
+  color: #2fcafa;
+}
+.table {
+  border: none;
+  font-size: 14px;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+}
+
+.td {
+  width: 25%;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  overflow-wrap: break-word;
+}
+
+.bg-w {
+  background: #96a5b1;
+}
+
+.bg-g {
+  border-top: 1px solid #eee;
+}
+
+.th {
+  width: 25%;
+  justify-content: center;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
+.head>view{
+  padding: 0 10px;
+}
+.head_item1{
+  border-bottom: 1px solid #eee;
+}
+.head_line{
+  line-height: 40px;
+}
+.line2{
+  font-size: 14px;
+}

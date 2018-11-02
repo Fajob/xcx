@@ -1,0 +1,27 @@
+<view>
+  <view class='order' style='height:250rpx;'>
+    <view class='orderInfo'>
+      <view class='orderImg'>
+        <image src='{{requestUrl}}{{img}}'></image>
+      </view>
+      <view class='con_column_left'>
+        <text class='infoIntroduce'>{{brief}}</text>
+        <text style='color:#999;margin:10px 0'>{{deal_name}}</text>
+      </view>
+    </view>
+  </view>
+  <form bindsubmit='sendComment'>
+  <view class='applyReason con_column_left'>
+    <textarea name='comments' maxlength='-1' placeholder='描述你的宝贝，和大家一起分享!' type='text' />
+  </view>
+  <view class='applyImg con_column_left'>
+    <view class='pzImg'>
+      <image wx:for='{{imgs}}' wx:key='{{index}}' src='{{item.img}}' style='display:{{item.display}};'>
+        <view data-index='{{index}}' bindtap='delImg' class='certificateP'></view>
+      </image>
+      <image bindtap='chooseImageTap' style='display:{{show}};' src='{{pictureUrl}}addImg.png'></image>
+    </view>
+  </view>
+  <button class='applyBtn' form-type='submit'>发布评价</button>
+  </form>
+</view>

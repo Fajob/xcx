@@ -1,0 +1,12 @@
+page{
+    background: #fff;
+}
+.instruction{
+    padding: 50rpx 30rpx 0 30rpx;
+}
+.instruction text{
+    display: flex;  
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    line-height: 30px;
+}

@@ -1,0 +1,13 @@
+/* pages/myOrderTitle/myOrderTitle.wxss */
+.my_order_title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  line-height: 50px;
+  background-color: #fff;
+}
+.active{
+  color: #00c4f4;
+  border-bottom: 2px solid #00c4f4;
+}

@@ -1,0 +1,34 @@
+<!--pages/stocks/stocks.wxml-->
+<view class='head'>
+  <view class='head_item1'>
+    <view class='head_line'>枕头库存</view>
+    <view class='head_line line2'>
+      <text>进货总量：{{z_total_num}} 件</text>
+      <text style='float:right'>剩余数量：{{z_left_num}} 件</text>
+    </view>
+  </view>
+  <view class='head_item2'>
+    <view class='head_line'>药包库存</view>
+    <view class='head_line line2'>
+      <text>进货总量：{{y_total_num}} 件</text>
+      <text style='float:right'>剩余数量：{{y_left_num}} 件</text>
+    </view>
+  </view>
+</view>
+<view class='stocks_detail'>
+  <view class='title'>进货明细</view>
+  <view class='table'>
+    <view class='tr bg-w'>
+      <view class='th'>时间</view>
+      <view class='th'>数量</view>
+      <view class='th'>金额</view>
+      <view class='th'>类型</view>
+    </view>
+    <view wx:for='{{order_detail}}' wx:key='{{index}}' class='tr bg-g'>
+      <view class='td'>{{item.time}}</view>
+      <view class='td'>{{item.meal_info.buy_count}}</view>
+      <view class='td'>{{item.total_price}}</view>
+      <view class='td'>{{item.meal_info.type==1?'枕头':'药包'}}</view>
+    </view>
+  </view>
+</view>

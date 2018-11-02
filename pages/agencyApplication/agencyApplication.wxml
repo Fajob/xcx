@@ -1,0 +1,43 @@
+<view class='head'>
+  <view bindtap='toggle' wx:for='{{properties}}' wx:key='{{index}}' id='{{index}}' class='{{index==id?"active":""}}'>{{item}}</view>
+</view>
+<view wx:for='{{mealList}}' wx:key='{{index}}' wx:if='{{item.type == 1&&id == 0}}' class='order_list_item1'>
+  <view class='order_list_item1_line1'>
+    <view>
+      <image src='{{requestUrl}}{{item.deal_detail.img}}'></image>
+    </view>
+    <view class='order_list_item1_line1_info'>
+      <text style='font-size:14px;'>{{item.deal_detail.brief}}</text>
+      <text style='font-size:14px;color:#999;'>枕头</text>
+    </view>
+  </view>
+  <view class='order_list_item1_line3 agency'>
+    <view>
+      数量：<text>{{item.buy_count}}件<text style='color:red;font-size:12px;'>({{item.meal_discount}}折)</text> </text>
+    </view>
+    <view>
+      金额：<text style='color:red;'>￥{{item.totalZ}}</text>
+    </view>
+    <button bindtap='goPay' data-url='{{item.url}}' style='font-size:14px !important'>立即下单</button>
+  </view>
+</view>
+<view wx:for='{{mealList}}' wx:key='{{index}}' wx:if='{{item.type == 2&&id == 1}}' class='order_list_item1'>
+  <view class='order_list_item1_line1'>
+    <view>
+      <image src='{{requestUrl}}{{item.deal_detail.img}}'></image>
+    </view>
+    <view class='order_list_item1_line1_info'>
+      <text style='font-size:14px;'>{{item.deal_detail.brief}}</text>
+      <text style='font-size:14px;color:#999;'>药包</text>
+    </view>
+  </view>
+  <view class='order_list_item1_line3 agency'>
+    <view>
+      数量：<text>{{item.buy_count}}件<text style='color:red;font-size:12px;'>({{item.meal_discount}}折)</text> </text>
+    </view>
+    <view>
+      金额：<text style='color:red;'>￥{{item.totalY}}</text>
+    </view>
+    <button bindtap='goPay' data-url='{{item.url}}' style='font-size:14px'>立即下单</button>
+  </view>
+</view>

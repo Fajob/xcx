@@ -1,0 +1,118 @@
+.creditInfo {
+  height: 240rpx;
+  background: #fff;
+  align-items: flex-end;
+}
+
+.creditInfo .pro {
+  margin-top: 30rpx;
+  width: 45rpx;
+  height: 45rpx;
+  display: flex;
+  margin-right: 43rpx;
+}
+
+.creditInfo .pro image {
+  width: 45rpx;
+  height: 45rpx;
+}
+
+.creditHandle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 65rpx;
+}
+
+.creditHandle view {
+  font-size: 16px;
+  margin-left: 36rpx;
+}
+
+.creditHandle view text {
+  font-size: 18px;
+  color: #fd002d;
+}
+
+.creditHandle .balance {
+  width: 111rpx;
+  height: 52rpx;
+  line-height: 53rpx;
+  background-color: #0d96ff;
+  color: #fff;
+  font-size: 16px;
+  margin-left: 0;
+  margin-right: 36rpx;
+  text-align: center;
+  border-radius: 5px;
+  vertical-align: middle;
+}
+
+.creditTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  background: #fff;
+  height: 105rpx;
+}
+
+.creditTitle text {
+  margin-left: 36rpx;
+  font-size: 16px;
+  color: #008eff;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+}
+
+.table .tr {
+  display: flex;
+  flex-direction: row;
+  min-height: 100rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.table .tr .th {
+  background: #96a5b1;
+  color: #fff;
+  font-size: 16px;
+  line-height: 100rpx;
+  width: 33.3%;
+  text-align: center;
+}
+
+.table .tr .td {
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  width: 33.3%;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10rpx;
+}
+
+.table .tr .td text {
+  word-break: break-all;
+}
+
+.con_column {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+.con_column view{
+  flex: auto;
+}
+.balance_item1{
+  border-right: 1px solid #eee;
+}

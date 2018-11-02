@@ -1,0 +1,68 @@
+/* pages/shareTop/shareTop.wxss */
+page{
+  background-color: #fff;
+}
+.rule{
+  padding: 15px;
+}
+.rule view{
+  padding: 15px 5px;
+  border: 1px solid red;
+  color: red;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.award{
+  padding: 5px 15px 15px 15px;
+  border-bottom: 1px solid #eee;
+}
+.award view{
+  color: #2fcafa;
+}
+.award view text{
+  display: inline-block;
+}
+.footer{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  border-top: 1px solid #eee;
+  background-color: #fff;
+}
+.footer>view{
+  margin: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #2fcafa;
+}
+.rank_list{
+  padding-bottom: 51px;
+  border-top: 1px solid #eee;
+}
+.table .tr{
+  line-height: 50px;
+  padding: 0 15px;
+  height: 50px;
+}
+.table .tr .td{
+  float: left;
+  width: 33.3%;
+  text-align: center;
+}
+.table .tr .th{
+  float: left;
+  width: 33.3%;
+}
+.table image{
+  width: 20px;
+  height: 30px;
+  vertical-align: middle;
+  margin-left: 45rpx;
+}
+.oushu{
+  background-color: #f7f7f7;
+}
+.ranking{
+  text-align: left !important;
+}

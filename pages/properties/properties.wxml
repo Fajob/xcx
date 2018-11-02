@@ -1,0 +1,129 @@
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular='true' bindchange='change'>
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item}}" mode='aspectFill' class="slide-image" width="" height="" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class='swiper_notice'>
+  {{currentSwiper}}/{{totalSwiper}}
+</view>
+<view class='info1'>
+  <view style='color:red;'>
+    ￥
+    <text style='font-size:18px;'>{{yCurPrice}}~{{curPrice}}</text>
+  </view>
+  <view style='color:gray;'>
+    已售：
+    <text>{{saleAmount}}</text>件
+  </view>
+</view>
+<view class='info2'>
+  {{brief}}
+</view>
+<view class='info3'>
+  <view style='font-size:14px;color:gray;'>
+    <checkbox checked='true' disabled='true' />7天退换
+  </view>
+  <view style='font-size:14px;color:gray;'>
+    <checkbox checked='true' disabled='true' />48小时内发货
+  </view>
+  <view style='font-size:14px;color:gray;'>
+    <checkbox checked='true' disabled='true' />品质保障
+  </view>
+</view>
+<!-- 产品评价 -->
+<navigator url='../commentList/commentList' hover-class='none'>
+  <view class='comment'>
+    <view class='comment1'>
+      <view>产品评价</view>
+      <view>
+        <text>查看全部</text>
+        <image src='{{pictureUrl}}step_in.png'></image>
+      </view>
+    </view>
+    <view class='comment2'>
+      <view class='comment2_user'>
+        <view class='comment2_avatar'>
+          <image src='{{comment.imgurl}}'></image>
+          <text>{{comment.nick}}</text>
+        </view>
+        <view>{{comment.time}}</view>
+      </view>
+      <view class='comment2_txt'>
+        {{comment.comment}}
+      </view>
+      <view class='comment2_img'>
+        <view wx:if='{{comment.img1}}' class="list-dImg">
+          <image src="{{requestUrl}}{{comment.img1}}"></image>
+        </view>
+        <view wx:if='{{comment.img2}}' class="list-dImg">
+          <image src="{{requestUrl}}{{comment.img2}}"></image>
+        </view>
+        <view wx:if='{{comment.img3}}' class="list-dImg">
+          <image src="{{requestUrl}}{{comment.img3}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</navigator>
+<view class='info4' style='padding-bottom:{{show_media?"":"0"}};'>
+  <text style='border-bottom:{{show_media?"":"none"}};margin-bottom:{{show_media?"":"0"}};'>产品详情</text>
+  <view wx:if='{{show_media}}'>
+    <view class='vedio_model' data-video='{{media_url}}' bindtap='play' wx:if='{{display}}'>
+      <image style='width:100%;' mode="aspectFill" src="{{pictureUrl}}swiper3.png?{{rondom}}"></image>
+      <view class='play_btn'>
+        <image src='{{pictureUrl}}play.png'></image>
+      </view>
+    </view>
+    <view class='vedio_model' wx:else>
+      <video bindended='showPreimg' autoplay='true' src='{{showUrl}}?{{random}}' objectFit='fill'></video>
+    </view>
+  </view>
+</view>
+<view class='info5' style='padding-bottom:40px'>
+  <image mode='widthFix' src='{{pictureUrl}}ad1.png?{{rondom}}'></image>
+</view>
+<view class='btn'>
+  <view>
+    <button type='primary' open-type='share'>马上分享</button>
+    <button type='warn' bindtap='buy'>立即购买</button>
+  </view>
+</view>
+<!--立即购买  -->
+<view class='masklayer' wx:if='{{masklayer == 1}}'>
+  <view class='buynow'>
+    <view class='buynow1'>
+      <view style='display:flex;'>
+        <image src='{{pictureUrl}}swiper3.png?{{random}}'></image>
+      </view>
+      <view class='buynow1_right'>
+        <view class='buynow1_close' bindtap='close'>×</view>
+        <text style='font-size:14px;'>{{brief}}</text>
+        <view>
+          <text style='color:red;'>￥{{yCurPrice}}~{{curPrice}}</text>
+          <text style='color:gray;font-size:14px;'> (库存{{stock}}件)</text>
+        </view>
+      </view>
+    </view>
+    <view class='buynow2'>
+      <view bindtap='choose' wx:for='{{ctx}}' wx:key='{{index}}' id='{{index}}' style='margin-right:15px;' class='{{index == id?"choosen":""}}'>{{item}}</view>
+    </view>
+    <view class='buynow3'>
+      <text>数量</text>
+      <view class='add_del'>
+        <text bindtap='reduce'>-</text>
+        <text style='background-color: #eee;'>{{itemNum}}</text>
+        <text bindtap='add'>+</text>
+      </view>
+    </view>
+    <view class='buybtn'>
+      <navigator url='{{url}}'>确定</navigator>
+    </view>
+  </view>
+</view>
+<!-- 播放视频 -->
+<!-- <view class='bigV' catchtouchmove='true' style='display:{{display}}'>
+  <view bindtap='hide' class='close'>×</view>
+  <video id='playVideo' src='{{item.src}}' objectFit='fill'></video>
+</view> -->

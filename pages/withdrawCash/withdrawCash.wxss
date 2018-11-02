@@ -1,0 +1,90 @@
+page{
+  background: #fff
+}
+.balance {
+  display: flex;
+  flex-direction: column;
+  height: 130px;
+  background: #fff;
+}
+
+.balance .title {
+  margin-left: 20px;
+  font-size: 14px;
+  margin-top: 70rpx;
+}
+
+.balance .balancePrice {
+  margin-left: 20px;
+  font-size: 30px;
+  color: #fd0047;
+  margin-top: 31rpx;
+}
+
+.moneyInfo {
+  display: flex;
+  flex-direction: column;
+  height: 190rpx;
+  background: #fff;
+  border-top: 10px solid #f3f3f3;
+  border-bottom: 1.5px solid #ddd;
+}
+
+.moneyInfo .title {
+  margin-top: 32rpx;
+  font-size: 14px;
+  margin-left: 20px;
+}
+.notice{
+  /* margin-top: 30rpx; */
+  line-height: 40px;
+  padding-left: 20px;
+  font-size: 14px;
+  color: gray;
+  border-bottom: 1px solid #eee;
+}
+
+.moneyInfo .moneyNum {
+  /* width: 100%; */
+  font-size: 24px;
+  height: 100rpx;
+  margin-left: 20px;
+}
+
+.balanceType {
+  /* height: 165rpx; */
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.balanceType .title {
+  margin-top: 30rpx;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+.balanceType .balanceAddress {
+  margin-top: 25rpx;
+  margin-left: 20px;
+  margin-bottom: 30rpx;
+  font-size: 14px;
+}
+
+.balanceType .balanceAddress text {
+  font-size: 18px;
+  color: #00c6f6;
+}
+
+.btnBox {
+  height: 500rpx;
+  background-color: #fff;
+}
+
+.btnBox button {
+  width: 80%;
+  line-height: 85rpx;
+  font-size: 14px;
+  background-color: #fd0047;
+  color: #fff;
+}

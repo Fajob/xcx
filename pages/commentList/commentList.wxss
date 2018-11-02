@@ -1,0 +1,8 @@
+/* pages/commentList/commentList.wxss */
+@import "../experience/experience.wxss";
+.exp_item {
+  border-bottom: 10px solid #f3f3f3;
+}
+.comment2{
+  color: gray;
+}

@@ -1,0 +1,5 @@
+<view class='my_order_title'>
+  <block wx:for="{{orderTypes}}">
+    <view class='{{status}}' bindtap='toggle'>{{item}}</view>
+  </block>
+</view>

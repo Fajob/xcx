@@ -1,0 +1,104 @@
+.con_row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}   
+.con_column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.con_left{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+.content{
+    width: 100%;
+    background: #fff;
+    margin-bottom: 10px;
+}
+.con_row view .head{
+    width:80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-left: 25px;
+    margin-right: 15px;
+}
+.myInfo{
+    width: 100%;
+    height: 140px;
+    background: #00c6f6;
+}
+.myInfo .con_left .name{
+    font-size: 16px;
+    color: #fff;
+}
+.myInfo .con_left .level{
+    font-size: 10px;
+    color: #fff;
+    background: rgba(0, 0, 0, .3);
+    padding: 1px 8px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 10px;
+}
+.justify-content{
+    display: flex;
+    padding: 0 10px;
+    height: 50px;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    line-height: 50px;
+    /* font-size: 14px; */
+}
+.justify-content navigator{
+    font-size: 12px;
+    color: #666;
+}
+.myDeal{
+    height: 72px;
+}
+.myDeal .con_column view{
+    display: flex;
+    width: 25px;
+    height: 25px;
+}
+.myDeal .con_column text{
+    display: flex;
+    line-height: 25px;
+    font-size: 12px;
+    color: #666;
+}
+.right{
+    width: 12px;
+    height: 12px;
+    margin-left: 5px;
+}
+.dealImg{
+    width: 25px;
+    height: 20px;
+}
+.myDeal .con_row{
+    position: relative;
+}
+.myDeal .con_row text{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    font-size: 10px;
+    background: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 15px;
+    position: absolute;
+    top: -6px;
+    right: -6px; 
+    color: #fff;
+}
+.icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}

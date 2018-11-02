@@ -1,0 +1,170 @@
+<!-- 个人购买 -->
+<view wx:if='{{orderType !=5}}'>
+  <view class='address'>
+    <view style='display:flex;align-items:center;'>
+      <image src='{{pictureUrl}}address.png'></image>
+      <view>
+        <text space='nbsp'>{{addressInfo.user_name}}   {{addressInfo.user_phone }}</text>
+        <view>{{addressInfo.address}}{{addressInfo.address1}}</view>
+      </view>
+    </view>
+    <view>
+      <button type='default' bindtap='changeAddress'>修改</button>
+    </view>
+  </view>
+  <view class="order_list_item1" style='margin-top:0;'>
+    <view class='order_list_item1_line1'>
+      <view style='display:flex;'>
+        <image src='{{requestPicture}}{{productInfo.img}}'></image>
+      </view>
+      <view class='order_list_item1_line1_info'>
+        <text style='font-size:14px;'>{{productInfo.brief}}</text>
+        <text style='font-size:14px;color:#999;'>{{id==0?'枕头+药包':'药包'}}</text>
+        <view>
+          <text style='color:red;'>￥{{id==0?productInfo.current_price:productInfo.y_current_price}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='order_list_item1_line2'>
+      <text>购买数量</text>
+      <text class='stlNum'>{{buyNum}}</text>
+    </view>
+  </view>
+  <view class='pay' style='margin-bottom:60px;'>
+    <checkbox-group bindchange='isChoosed'>
+      <label class="checkbox">
+        <view style='display:flex;align-items:center;'>
+          <image src='{{pictureUrl}}shoppingCredits.png'></image>
+          <view class='stlDiscount'>
+            <text>现金红包</text>
+            <text style='font-size:14px;color:gray;'>可用红包：{{userInfo.data.jifen}}</text>
+          </view>
+        </view>
+        <checkbox value="credit" />
+      </label>
+      <label class="checkbox" style='border-bottom:10px solid #eee'>
+        <view style='display:flex;align-items:center;'>
+          <image src='{{pictureUrl}}sharingRewards.png'></image>
+          <view class='stlDiscount'>
+            <text>我的余额</text>
+            <text style='font-size:14px;color:gray;'>可用余额：{{userInfo.data.yue}}</text>
+          </view>
+        </view>
+        <checkbox value="left" />
+      </label>
+      <label class="checkbox">
+        <view>
+          <image src='{{pictureUrl}}wepay.png'></image>
+          <text>微信支付</text>
+        </view>
+        <checkbox value="wepay" />
+      </label>
+    </checkbox-group>
+  </view>
+  <view class='stlPay'>
+    <view class='stlPaylt'>
+      <view>
+        <text>应付款：</text>
+        <text style='font-size:14px;color:#fd0047;'>￥</text>
+        <text style='color:#fd0047;'>{{totalPrice}}</text>
+      </view>
+      <text style='font-size:14px;color:#fd0047;'>免运费</text>
+    </view>
+    <view class='stlBtn' bindtap='payNow5'>
+      立即支付
+    </view>
+  </view>
+</view>
+<!-- 代理购买 -->
+<view wx:else>
+  <view class="order_list_item1" style='margin-top:0;'>
+    <view class='order_list_item1_line1'>
+      <view style='display:flex;'>
+        <image src='{{requestUrl}}{{dealDetail.deal_detail.img}}'></image>
+      </view>
+      <view class='order_list_item1_line1_info'>
+        <text style='font-size:14px;'>{{dealDetail.deal_detail.brief}}</text>
+        <text wx:if='{{id == 1}}' style='font-size:14px;color:#999;'>枕头</text>
+        <text wx:if='{{id == 2}}' style='font-size:14px;color:#999;'>药包</text>
+      </view>
+    </view>
+    <view class='order_list_item1_line2'>
+      <view>
+        数量：
+        <text style='color:red;'>{{dealDetail.buy_count}}件</text>
+      </view>
+
+      <view>
+        金额：
+        <text wx:if='{{id == 1}}' style='color:red;'>￥{{dealDetail.totalZ}}</text>
+        <text wx:if='{{id == 2}}' style='color:red;'>￥{{dealDetail.totalY}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='pay' style='margin-bottom:60px;'>
+    <checkbox-group bindchange='isChoosed5'>
+      <label class="checkbox">
+        <view style='display:flex;align-items:center;'>
+          <image src='{{pictureUrl}}shoppingCredits.png'></image>
+          <view class='stlDiscount'>
+            <text>现金红包</text>
+            <text style='font-size:14px;color:gray;'>可用红包：{{dealDetail.useful_credits}}</text>
+          </view>
+        </view>
+        <checkbox value="credit" />
+      </label>
+      <label class="checkbox" style='border-bottom:10px solid #eee'>
+        <view style='display:flex;align-items:center;'>
+          <image src='{{pictureUrl}}sharingRewards.png'></image>
+          <view class='stlDiscount'>
+            <text>我的余额</text>
+            <text style='font-size:14px;color:gray;'>可用余额：{{dealDetail.useful_left}}</text>
+          </view>
+        </view>
+        <checkbox value="left" />
+      </label>
+      <label class="checkbox">
+        <view>
+          <image src='{{pictureUrl}}wepay.png'></image>
+          <text>微信支付</text>
+        </view>
+        <checkbox value="wepay" />
+      </label>
+    </checkbox-group>
+  </view>
+  <view class='stlPay'>
+    <view class='stlPaylt'>
+      <view>
+        <text>实付款：</text>
+        <text style='font-size:14px;color:#fd0047;'>￥</text>
+        <text style='color:#fd0047;'>{{dealDetail.type==1?dealDetail.totalZ:dealDetail.totalY}}</text>
+      </view>
+      <text wx:if='{{orderType != 5}}' style='font-size:14px;color:#fd0047;'>免运费</text>
+    </view>
+    <view class='stlBtn' bindtap='payNow5'>
+      立即支付
+    </view>
+  </view>
+</view>
+<!-- 确认支付信息 -->
+<view class='confirm' wx:if='{{confirm}}'>
+  <view class='confirm_box'>
+    <view bindtap='close' style='align-self:flex-end;padding:0 10px'>×</view>
+    <view style='color:#2fcafa;text-align:center'>订单结算</view>
+    <view style='padding:0 20px'>
+      <text>红包支付</text>
+      <text style='color:red;float:right'>￥{{pay1}}</text>
+    </view>
+    <view style='padding:0 20px'>
+      <text>余额支付</text>
+      <text style='color:red;float:right'>￥{{pay2}}</text>
+    </view>
+    <view style='padding:0 20px'>
+      <text>微信支付</text>
+      <text style='color:red;float:right'>￥{{pay3}}</text>
+    </view>
+    <view>
+      <button bindtap='pay5'>确定</button>
+    </view>
+  </view>
+</view>

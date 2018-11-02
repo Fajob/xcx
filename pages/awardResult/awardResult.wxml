@@ -1,0 +1,16 @@
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th">时间</view>
+    <view class="th">金额</view>
+    <view class="th">积分</view>
+    <view class="th">状态</view>
+  </view>
+  <block wx:for="{{results}}" wx:key="{{index}}">
+    <view class="tr bg-g">
+      <view class="td">{{item.time}}</view>
+      <view class="td">{{item.yue}}</view>
+      <view class="td">{{item.jifen}}</view>
+      <view class="td" style='color:{{item.status==2?"red":""}};'>{{item.status==1?"待开奖":(item.status==2?"中奖":"未中奖")}}</view>
+    </view>
+  </block>
+</view>

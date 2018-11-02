@@ -1,0 +1,28 @@
+<view wx:if='{{addressList}}' style='padding-bottom:120rpx'>
+  <view class='address_item' wx:for='{{addressList}}' wx:key='{{item.address_id}}'>
+    <view class='address_item1'>
+      <text space='nbsp'>{{item.user_name}}     </text>
+      <text>{{item.user_phone}}</text>
+    </view>
+    <view class='address_item2'>
+         <text>{{item.address}}</text> 
+         <text>{{item.address1}}</text>     
+    </view>
+    <view class='address_item3'>
+      <view data-name='{{item.user_name}}' data-phone='{{item.user_phone}}' data-address='{{item.address}}' data-adds='{{item.address1}}' data-id="{{item.address_id}}" data-default="{{item.is_default}}"  bindtap='defaultAddress'>
+            <image wx:if="{{item.is_default == 0}}" style='vertical-align:middle' src='{{pictureUrl}}uncheck.png'></image>
+            <image wx:else style='vertical-align:middle' src='{{pictureUrl}}check.png'></image>  
+            <text style='vertical-align:middle'>默认地址</text>
+      </view>
+      <view style='display:flex;flex-direction:row;'>
+        <button  data-name='{{item.user_name}}' data-phone='{{item.user_phone}}' data-address='{{item.address}}' data-adds='{{item.address1}}' data-id="{{item.address_id}}" data-defaults="{{item.is_default}}" bindtap='editAddress' type='default' style='margin-right:15px;'>编辑</button>
+        <button bindtap='delAddress' type='default' data-adds_id="{{item.address_id}}">删除</button>
+      </view>
+    </view>
+  </view>
+</view>
+<navigator url='../addAddress/addAddress?edit=0'>
+  <view class='add_address'>
+    ＋添加新地址
+  </view>
+</navigator>

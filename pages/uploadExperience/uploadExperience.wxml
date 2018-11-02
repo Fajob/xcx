@@ -1,0 +1,129 @@
+<view>
+  <view>
+    <view class='type'>
+      <radio-group class="con_row" bindchange='radioChange'>
+        <label style='margin-left:100rpx;' bindtap='select'>
+          <radio checked='true' name="exp_module" value="1" />模板一</label>
+        <label style='margin-right:100rpx;' bindtap='select1'>
+          <radio name="exp_module" value="2" />模板二</label>
+      </radio-group>
+    </view>
+    <form bindsubmit='formSubmit' wx:if='{{select}}'>
+      <view class='container {{select?"show":"none"}}'>
+        <input class='title' maxlength='20' name='title' value='智能健康枕用户舒适反馈' />
+        <view class='one con_row' style='margin-top:50rpx;'>
+          <view class='img left'>
+            <image src='{{pictureUrl}}kuang1.png'></image>
+            <view class='upImg'>
+              <image bindtap='chooseImageTap' data-index='1' data-num='0' data-src='{{has}}' src='{{pictures[0]}}'></image>
+            </view>
+          </view>
+          <view class='con right'>
+            <textarea maxlength='43' name='txt1' value='用了一段时间了,决定分享一下自己的体验,用了一段时间大大缓解了颈椎酸痛的问题...' />
+          </view>
+        </view>
+        <view class='one con_row'>
+          <view class='con left'>
+            <textarea maxlength='43' name='txt2' value='枕头很舒服,枕上以后晚上很少再醒,白天起来以后,脖子上有感觉,简单好用...' />
+          </view>
+          <view class='img'>
+            <image src='{{pictureUrl}}kuang1.png'></image>
+            <view class='upImg'>
+              <image bindtap='chooseImageTap' data-index='1' data-num='1' data-src='{{has}}' src='{{pictures[1]}}'></image>
+            </view>
+          </view>
+        </view>
+        <view class='two'>
+          <textarea maxlength='40' name='txt3' value='有药草香，面料不错...' />
+          <view class='radio'>
+            <view>
+              <video style='width:100%;height:100%' objectFit='fill' class='{{video==""?"hide":""}}' src='{{video}}'></video>
+            </view>
+            <image bindtap='chooseVideoTap' data-index='1' src='{{pictureUrl}}sp.png'></image>
+          </view>
+        </view>
+        <view class='three'>
+          <textarea maxlength='40' name='txt4' value='自己的脖颈酸痛，枕了一段时间后有所缓解，推荐大家一试...' />
+          <view class='threeKuang'>
+            <view>
+              <image src='{{pictureUrl}}four.png'></image>
+              <view>
+                <image bindtap='chooseImageTap' data-index='1' data-num='2' data-src='{{has}}' src='{{pictures[2]}}'></image>
+              </view>
+            </view>
+            <view>
+              <image src='{{pictureUrl}}four.png'></image>
+              <view>
+                <image bindtap='chooseImageTap' data-index='1' data-num='3' data-src='{{has}}' src='{{pictures[3]}}'></image>
+              </view>
+            </view>
+            <view style='transform:rotate(-5deg);transform-origin: right bottom'>
+              <image src='{{pictureUrl}}four.png'></image>
+              <view>
+                <image bindtap='chooseImageTap' data-index='1' data-num='4' data-src='{{has}}' src='{{pictures[4]}}'></image>
+              </view>
+            </view>
+            <view>
+              <image src='{{pictureUrl}}four.png'></image>
+              <view>
+                <image bindtap='chooseImageTap' data-index='1' data-num='5' data-src='{{has}}' src='{{pictures[5]}}'></image>
+              </view>
+            </view>
+          </view>
+        </view>
+        <button class='up' form-type='submit'>提交</button>
+      </view>
+    </form>
+    <!--模板二  -->
+    <form bindsubmit='formSubmit' wx:if='{{select1}}'>
+      <view class='container2 con_column {{select1?"show":"none"}}'>
+        <view class='one2'>
+          <image src='{{pictureUrl}}title.png'></image>
+          <input maxlength='30' name='title' value='多种自然草木缓解颈椎问题枕' />
+        </view>
+        <view class='three2'>
+          <view>
+            <video style='width:100%;height:100%' objectFit='fill' class='{{video1==""?"hide":""}}' src='{{video1}}'></video>
+          </view>
+          <image bindtap='chooseVideoTap' data-index='2' src='{{pictureUrl}}dn.png'></image>
+        </view>
+        <view class='con4 con_column'>
+          <textarea maxlength='40' class='con4Tit' name='txt1' value='每天都是这个枕头陪我睡,现在颈椎问题缓解好了很多了,用起来也蛮舒服的...' />
+          <view class='conTwo'>
+            <image src='{{pictureUrl}}xTop.png'></image>
+            <view class='Img'>
+              <image bindtap='chooseImageTap' data-index='2' data-num='0' data-src='{{has}}' src='{{photos[0]}}'></image>
+            </view>
+          </view>
+          <view class='x'></view>
+        </view>
+        <view class='con5'>
+          <textarea maxlength='41' name='txt2' value='以前也在淘宝上买了一个枕头,同样的健康枕,感觉这个枕头稍微好用一些...' />
+        </view>
+        <view class='one con_row' style='margin-top:160rpx;'>
+          <view class='con left'>
+            <textarea maxlength='43' name='txt3' value='枕头的设计也挺合理,高矮都好,就是有点硬,可能是以前睡软枕头习惯了,需要适应...' />
+          </view>
+          <view class='img img3'>
+            <image src='{{pictureUrl}}img3.png'></image>
+            <view class='upImg'>
+              <image bindtap='chooseImageTap' data-index='2' data-num='1' data-src='{{has}}' src='{{photos[1]}}'></image>
+            </view>
+          </view>
+        </view>
+        <view class='one con_row' style='margin-top:70rpx;'>
+          <view class='img left img3'>
+            <image src='{{pictureUrl}}img3.png'></image>
+            <view class='upImg'>
+              <image bindtap='chooseImageTap' data-index='2' data-num='2' data-src='{{has}}' src='{{photos[2]}}'></image>
+            </view>
+          </view>
+          <view class='con right' style='margin-left:20rpx;'>
+            <textarea maxlength='43' name='txt4' value='工作很辛苦，生活不容易，还是要好好照顾自己，物美价廉推荐大家一试...' />
+          </view>
+        </view>
+        <button class='up' form-type='submit'>提交</button>
+      </view>
+    </form>
+  </view>
+</view>

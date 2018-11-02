@@ -1,0 +1,184 @@
+<!--index.wxml-->
+<view class='container'>
+  <view class='my_head'>
+    <image class='my_head_bg' src='{{pictureUrl}}myBg.jpg'></image>
+    <view class='my_head_img'>
+      <!-- <open-data class='img' type="userAvatarUrl"></open-data> -->
+      <image class='img' src='{{userInfo.avatarUrl}}'></image>
+    </view>
+    <view class='my_head_info'>
+      <view>
+        <!-- <open-data type="userNickName"></open-data> -->
+        {{userInfo.nickName}}
+      </view>
+      <text wx:if='{{obj.proxy == 3}}' class='my_level'>商户</text>
+    </view>
+  </view>
+  <!-- 中奖公告 -->
+  <view wx:if='{{hasGonggao}}' class='award_announce'>
+    <image class='award' src='{{pictureUrl}}awardAnnounce.png'></image>
+    <swiper class='gonggao' autoplay circular="true" vertical="true" interval="3000" duration='1000'>
+      <block wx:for="{{gonggao}}" wx:key="{{index}}">
+        <swiper-item>
+          <view class='gonggao1'>
+            <image class='award_user' src='{{item.user_img}}'></image>
+            <view style='overflow:hidden;white-space:nowrap;text-overflow:ellipsis'>恭喜<text style='font-weight:bold;color:red;'>{{item.user_name}}</text>获得{{item.yue}}现金和{{item.jifen}}积分红包</view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <navigator url='/pages/myOrder/myOrder?order_type=0' class='my_order' hover-class='none'>
+    <text style='font-size:16px;'>我的订单</text>
+    <view>
+      <text class='step_in_words'>查看全部</text>
+      <image class='step_in' src='{{pictureUrl}}step_in.png'></image>
+    </view>
+  </navigator>
+
+  <view class='order_menu'>
+    <navigator url='/pages/myOrder/myOrder?order_type=1' hover-class='none'>
+      <view>
+        <image src='{{pictureUrl}}tobePayed.png'></image>
+        <view>待付款</view>
+        <view wx:if='{{obj.state0 > 0}}' class='tobereceived_num'>{{obj.state0}}</view>
+      </view>
+    </navigator>
+    <navigator url='/pages/myOrder/myOrder?order_type=2' hover-class='none'>
+      <view>
+        <image src='{{pictureUrl}}tobeDelivered.png'></image>
+        <view>待发货</view>
+        <view wx:if='{{obj.state1 > 0}}' class='tobereceived_num'>{{obj.state1}}</view>
+      </view>
+    </navigator>
+    <navigator url='/pages/myOrder/myOrder?order_type=3' hover-class='none'>
+      <view>
+        <image src='{{pictureUrl}}tobeReceived.png'></image>
+        <view>待收货</view>
+        <view wx:if='{{obj.state2 > 0}}' class='tobereceived_num'>{{obj.state2}}</view>
+      </view>
+    </navigator>
+    <navigator url='/pages/myOrder/myOrder?order_type=4' hover-class='none'>
+      <view>
+        <image style='height:25px' src='{{pictureUrl}}tobeEvaluated.png'></image>
+        <view>待评价</view>
+        <view wx:if='{{obj.state3 > 0}}' class='tobereceived_num'>{{obj.state3}}</view>
+      </view>
+    </navigator>
+  </view>
+
+  <view class='menu'>
+    <navigator url='../myBalance/myBalance' hover-class='none'>
+      <view class='menu_item right_bottom'>
+        <view class='menu_content'>
+          <image src='{{pictureUrl}}sharingRewards.png'></image>
+          <view>我的余额</view>
+        </view>
+      </view>
+    </navigator>
+    <navigator url='../myCredit/myCredit' hover-class='none'>
+      <view class='menu_item right_bottom'>
+        <view class='menu_content'>
+          <image src='{{pictureUrl}}shoppingCredits.png'></image>
+          <view>现金红包</view>
+        </view>
+      </view>
+    </navigator>
+    <navigator url='../agency/agency' hover-class='none'>
+      <view style='border-right:none;' class='menu_item'>
+        <view class='menu_content'>
+          <image src='{{pictureUrl}}merchantAgent.png'></image>
+          <view>商户中心</view>
+        </view>
+      </view>
+    </navigator>
+    <navigator url='../address/address' hover-class='none'>
+      <view class='menu_item right_bottom'>
+        <view class='menu_content'>
+          <image src='{{pictureUrl}}shippingAddress.png'></image>
+          <view>收货地址</view>
+        </view>
+      </view>
+    </navigator>
+    <navigator url='../shareTop/shareTop' hover-class='none'>
+      <view class='menu_item right_bottom'>
+        <view class='menu_content'>
+          <image src='{{pictureUrl}}shareTop.png'></image>
+          <view>邀请排行榜</view>
+        </view>
+      </view>
+    </navigator>
+    <navigator url='../awardResult/awardResult' hover-class='none'>
+      <view style='border-right:none;' class='menu_item'>
+        <view class='menu_content'>
+          <image src='{{pictureUrl}}getAward.png'></image>
+          <view>抽奖结果</view>
+        </view>
+      </view>
+    </navigator>
+    <navigator url='../myShare/myShare' hover-class='none'>
+      <view style='border-bottom:none;' class='menu_item '>
+        <view class='menu_content'>
+          <image src='{{pictureUrl}}myShare.png'></image>
+          <view>我的邀请</view>
+        </view>
+      </view>
+    </navigator>
+    <navigator url='../myExperience/myExperience' hover-class='none'>
+      <view style='border-bottom:none;' class='menu_item '>
+        <view class='menu_content'>
+          <image src='{{pictureUrl}}myExperience.png'></image>
+          <view>我的体验</view>
+          <view style='display:{{obj.has_new_comment==0?"none":""}}' class='my_exp'></view>
+        </view>
+      </view>
+    </navigator>
+    <view bindtap='followGzh' style='border:none;' class='menu_item'>
+      <view class='menu_content'>
+        <image src='{{pictureUrl}}followPub.png'></image>
+        <view>关注公众号</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 关联的公众号 -->
+<!-- <view wx:if='{{canIUse}}' style='border-top:10px solid #eee'>
+  <official-account></official-account>
+</view>
+<view wx:else style='border-top:10px solid #eee;padding:20rpx;font-size:14px;color:#3e3e3e'>搜索“颈美康”公众号获取更多信息</view> -->
+<!-- 关注公众号页 -->
+<view bindtap='closeGzh' class='follow_gzh1' style='display:{{followgzh}}'>
+  <image mode='widthFix' style='width:180px;margin-right:70px' src='{{pictureUrl}}guide_follow.png'></image>
+</view>
+<!-- 客服 -->
+<view class='online_service'>
+  <image class='my_order_class' src='{{pictureUrl}}onlineService_1.png'></image>
+  <view class='upload_exp'>
+    <button open-type='contact'>客服</button>
+  </view>
+</view>
+<!-- 抽奖提示页 -->
+<view class='awardPage' style='display:{{isAward}};'>
+  <view class='awardPicture'>
+    <image src='{{pictureUrl}}redBao.png' mode='widthFix'></image>
+    <view style='margin-top:-175px;' class='txt'>用户</view>
+    <view class='txt'>每天可参与一次现金抽奖</view>
+    <view class='txt'>欢迎参与</view>
+    <view class='awardBtn'>
+      <button bindtap='lottery'>点击参与</button>
+    </view>
+  </view>
+  <view style='margin-top:20px;'>
+    <image bindtap='close' class='close_award' src='{{pictureUrl}}close.png'></image>
+  </view>
+</view>
+<view class='awardPage' style='display:{{isAward1}};'>
+  <view class='awardPicture'>
+    <image src='{{pictureUrl}}redBao.png' mode='widthFix'></image>
+    <view style='margin-top:-140px;' class='txt'>参与成功</view>
+    <view class='txt'>请于次日查看您的抽奖结果</view>
+  </view>
+  <view style='margin-top:50px;'>
+    <image bindtap='closed' class='close_award' src='{{pictureUrl}}close.png'></image>
+  </view>
+</view>

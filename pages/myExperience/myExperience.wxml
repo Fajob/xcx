@@ -1,0 +1,115 @@
+<view class='user_exp'>
+  <block wx:for="{{expTypes}}" wx:key='{{index}}'>
+    <view id='{{index}}' class='{{index == id?"active":""}} {{index==id && has_new_comments==1?"red_dot1":""}}' bindtap='toggle'>{{item}}</view>
+  </block>
+</view>
+<!--我的体验  -->
+<view wx:if='{{id == 0}}'>
+  <view class='rule'>
+    <view>
+      {{desc}}
+    </view>
+  </view>
+  <view wx:for='{{myExp}}' wx:key='{{index}}' class='exp_item'>
+    <view class='exp1'>
+      <view class='exp1_img' style='width:100%'>
+        <image src='{{item.imgurl}}'></image>
+        <view>
+          <text>{{item.nick}}</text>
+          <view style='font-size:12px;'>{{item.time}}</view>
+        </view>
+        <view style='color:red;align-self:flex-start;text-align:right;flex:auto'>{{item.status==0?'待审核':(item.status==1?'已通过':'未通过')}}</view>
+      </view>
+    </view>
+    <view class='exp2' data-expid='{{item.id}}' data-url='{{item.exp_module}}'>
+      <view class='exp2_img' wx:if='{{item.hasImg == true && item.video1 == ""}}'>
+        <image wx:if='{{item.img1 != ""||item.img2 != ""||item.img3 != ""}}' catchtap='imgYu' data-src1='{{item.img4?item.img4:(item.img5?item.img5:(item.img6?item.img6:""))}}' data-src='{{item.img1?item.img1:(item.img2?item.img2:(item.img3?item.img3:""))}}'
+          src='{{requestUrl}}{{item.img1?item.img1:(item.img2?item.img2:(item.img3?item.img3:""))}}'></image>
+        <image wx:if='{{item.img4 != ""||item.img5 != null||item.img6 != null}}' catchtap='imgYu' data-src1='{{item.img1?item.img1:(item.img2?item.img2:(item.img3?item.img3:""))}}' data-src='{{item.img4?item.img4:(item.img5?item.img5:(item.img6?item.img6:""))}}'
+          src='{{requestUrl}}{{item.img4?item.img4:(item.img5?item.img5:(item.img6?item.img6:""))}}'></image>
+      </view>
+      <!-- <view class='exp2_video' catchtap='play' wx:if='{{item.video1 != ""}}'>
+          <image style='width:100%;height:100%;' src='{{requestUrl}}{{item.video1}}'></image>
+        </view> -->
+      <view class='exp2_video' data-src='{{item.video1}}' wx:if='{{item.video1 != ""}}'>
+        <video style='width:100%;height:100%;' src='{{requestUrl}}{{item.video1}}' objectFit='fill'></video>
+      </view>
+      <view class='exp2_txt' catchtap='goto' data-expid='{{item.id}}' data-url='{{item.exp_module}}'>{{item.txt1}}</view>
+    </view>
+    <view class='funs'>
+      <view bindtap='like' data-index='{{item.id}}' class='mui-icon-extra {{item.has_rate==0?"":"actives"}}'>
+        <image src='{{pictureUrl}}{{item.has_rate==0?"like_dark.png":"like_light.png"}}'></image>
+        <text>{{item.rate_num}}</text> </view>
+      <view style='display:unset;margin-left:30px;' bindtap='goto' data-expid='{{item.id}}' data-url='{{item.exp_module}}'>
+        <view style='margin-left:0;' class='mui-icon-extra'>
+          <image class='{{item.has_new_comment==0?"":"red_dot"}}' src='{{pictureUrl}}comment.png'></image>
+          <text>{{item.comment_num}}</text>
+        </view>
+      </view>
+      <view class='mui-icon-extra'>
+        <image src='{{pictureUrl}}share.png'></image>
+        <button data-share='{{item.id}}' open-type='share'>{{item.share_num}}</button>
+      </view>
+    </view>
+    <!-- 播放视频 -->
+    <view class='bigV' catchtouchmove='true' style='display:{{display}}'>
+      <view bindtap='hide' class='close'>×</view>
+      <video id='playVideo' src='{{requestUrl}}{{item.video1}}' objectFit='fill'></video>
+    </view>
+  </view>
+  <view style='font-size:14px;text-align:center;line-height:60px;color:#666;'>
+    没有更多了...
+  </view>
+</view>
+<!--我的参与  -->
+<view wx:if='{{id == 1}}'>
+  <view wx:for='{{myJoin}}' wx:key='{{index}}' class='exp_item'>
+    <view class='exp1'>
+      <view class='exp1_img'>
+        <image src='{{item.imgurl}}'></image>
+        <view>
+          <text>{{item.nick}}</text>
+          <view style='font-size:12px;'>{{item.time}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='exp2' bindtap='goto' data-url='{{item.exp_module}}'>
+      <view class='exp2_img' wx:if='{{item.hasImg == true && item.video1 == ""}}'>
+        <image wx:if='{{item.img1 != ""||item.img2 != ""||item.img3 != ""}}' catchtap='imgYu' data-src1='{{item.img4?item.img4:(item.img5?item.img5:(item.img6?item.img6:""))}}' data-src='{{item.img1?item.img1:(item.img2?item.img2:(item.img3?item.img3:""))}}'
+          src='{{requestUrl}}{{item.img1?item.img1:(item.img2?item.img2:(item.img3?item.img3:""))}}'></image>
+        <image wx:if='{{item.img4 != ""||item.img5 != null||item.img6 != null}}' catchtap='imgYu' data-src1='{{item.img1?item.img1:(item.img2?item.img2:(item.img3?item.img3:""))}}' data-src='{{item.img4?item.img4:(item.img5?item.img5:(item.img6?item.img6:""))}}'
+          src='{{requestUrl}}{{item.img4?item.img4:(item.img5?item.img5:(item.img6?item.img6:""))}}'></image>
+      </view>
+      <!-- <view class='exp2_video' catchtap='play' wx:if='{{item.video1 != ""}}'>
+          <image style='width:100%;height:100%;' src='{{requestUrl}}{{item.video}}'></image>
+        </view> -->
+      <view class='exp2_video' data-src='{{item.video1}}' wx:if='{{item.video1 != ""}}'>
+        <video style='width:100%;height:100%;' src='{{requestUrl}}{{item.video1}}' objectFit='fill'></video>
+      </view>
+      <view class='exp2_txt'>{{item.txt1}}</view>
+    </view>
+    <view class='funs'>
+      <view bindtap='like' data-index='{{item.id}}' class='mui-icon-extra {{item.has_rate==0?"":"actives"}}'>
+        <image src='{{pictureUrl}}{{item.has_rate==0?"like_dark.png":"like_light.png"}}'></image>
+        <text>{{item.rate_num}}</text> </view>
+      <navigator style='display:unset;margin-left:30px;' url='{{item.exp_module}}' hover-class='none'>
+        <view style='margin-left:0;' class='mui-icon-extra'>
+          <image src='{{pictureUrl}}comment.png'></image>
+          <text>{{item.comment_num}}</text>
+        </view>
+      </navigator>
+      <view class='mui-icon-extra'>
+        <image src='{{pictureUrl}}share.png'></image>
+        <button data-share='{{item.id}}' open-type='share'>{{item.share_num}}</button>
+      </view>
+    </view>
+    <!-- 播放视频 -->
+    <view class='bigV' catchtouchmove='true' style='display:{{display}}'>
+      <view bindtap='hide' class='close'>×</view>
+      <video id='playVideo' src='{{requestUrl}}{{item.video1}}' objectFit='fill'></video>
+    </view>
+  </view>
+  <view style='font-size:14px;text-align:center;line-height:60px;color:#666;'>
+    没有更多了...
+  </view>
+</view>

@@ -1,0 +1,12 @@
+/* pages/agencyAddress/agencyAddress.wxss */
+@import '../addAddress/addAddress.wxss';
+.word_justify{
+  display: flex;
+  justify-content: space-between;
+  width: 64px;
+}
+.notice{
+  padding:10px;
+  color:red;
+  font-size:12px;
+}

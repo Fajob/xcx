@@ -1,0 +1,49 @@
+@import "../public/my.wxss";
+
+page {
+  background: #fff;
+}
+
+.balance {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 110px;
+  background-color: #2fcafa;
+  color: #fff;
+}
+.balance view{
+  text-align: center;
+  flex: auto;
+}
+.balance_item1{
+  border-right: 1px solid #eee;
+}
+
+.balance .icon {
+  height: 20px;
+  line-height: 36px;
+  margin-left: 20px;
+}
+
+.balancePrice {
+  font-size: 36px;
+  margin-left: 5px;
+}
+
+.choose {
+  border-top: 10px solid #f8f8f8;
+}
+
+.icon {
+  width: 22px;
+  height: 22px !important;
+}
+
+.symbol{
+  margin-left:15px;
+  height:20px;
+  line-height: 36px;
+  font-size: 22px;
+}

@@ -1,0 +1,48 @@
+<view wx:if='{{isApply == 0}}'>
+  <form bindsubmit='apply'>
+  <view class='info'>
+   <view>您的职业：</view> 
+   <view>
+    <input name='job' placeholder='从事的相关工作'></input>
+    </view>
+  </view>
+  <view class='info'>
+   <view>真实姓名：</view> 
+   <view>
+    <input name='realname' placeholder='您的真实姓名'></input>
+    </view>
+  </view>
+  <view class='upload_picture'>
+    <view class='upload_info1'>手持身份证正面照</view>
+    <!-- <image src=''></image> -->
+    <view class='upload_info2'>
+      <image mode='scaleToFill' bindtap='chooseImageTap' data-index='1' class='upload_idcard' src='{{imgTop.src}}' style='display:{{imgTop.display}}'></image>
+      <image bindtap='chooseImageTap' data-index='1' class='upload_icon' src='{{pictureUrl}}addImg.png' style='display:{{topShow}}'></image>
+    </view>
+  </view>
+  <view class='upload_picture'>
+    <view class='upload_info1'>手持身份证背面照</view>
+    <!-- <image src=''></image> -->
+    <view class='upload_info2'>
+      <image mode='scaleToFill' bindtap='chooseImageTap' data-index='2' class='upload_idcard' src='{{imgBottom.src}}' style='display:{{imgBottom.display}}'></image>
+      <image bindtap='chooseImageTap' data-index='2' class='upload_icon' src='{{pictureUrl}}addImg.png' style='display:{{bottomShow}}'></image>
+    </view>
+  </view>
+  <view class='apply_btn'>
+    <button form-type='submit'>提交</button>
+  </view>
+  </form>
+</view>
+<view class='review' wx:if='{{isApply == 1}}'>
+  <view class='review1'>
+    <image src='{{pictureUrl}}clock.png'></image>
+  </view>
+  <view class='review2'>
+    <text>审核中，请耐心等待</text>
+  </view>
+  <view class='review3'>
+    <text>我们将在工作日1~3天进行审核</text>
+    <text>审核通过后您可直接进货销售，感谢您</text>
+    <text>对我们的信任与支持</text>
+  </view>
+</view>

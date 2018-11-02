@@ -1,0 +1,15 @@
+<view class='shares'>
+  当前邀请 <text style='font-size:28px;color:#ff0101;'>{{total_count}}</text> 人
+</view>
+<view class='sharelist'>
+  <view class='title'>邀请列表</view>
+  <view class="table">
+    <view wx:for='{{shareList}}' wx:key='{{index}}' class='tr'>
+      <view class='td'>
+        <image src='{{item.imgurl}}'></image>
+        <view>{{item.nick}}</view>
+      </view>
+      <view class='td'>{{item.c_time}}</view>
+    </view>
+  </view>
+</view>

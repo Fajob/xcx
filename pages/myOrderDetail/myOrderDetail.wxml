@@ -1,0 +1,240 @@
+<view wx:if='{{refund == 0}}'>
+  <view class='head'>
+    <view style='color:red;'>
+      <text>{{headInfo1}}</text>
+      <text style='font-size:14px;'>{{headInfo2}}</text>
+    </view>
+    <view>
+      <image src='{{headImg}}'></image>
+      <view class='shadow'></view>
+    </view>
+  </view>
+  <view class='address1'>
+    <view>
+      收货人：{{orderDetail.address_detail.user_name}}
+    </view>
+    <view>
+      联系电话：{{orderDetail.address_detail.user_phone}}
+    </view>
+    <view>
+      收货地址：{{orderDetail.address_detail.address}} {{orderDetail.address_detail.address1}}
+    </view>
+  </view>
+  <view class="order_list_item1" style='margin-top:0;'>
+    <view class='order_list_item1_line1'>
+      <view>
+        <image src='{{requestUrl}}{{orderDetail.img}}'></image>
+      </view>
+      <view class='order_list_item1_line1_info'>
+        <text style='font-size:14px;'>{{orderDetail.brief}}</text>
+        <text style='font-size:14px;color:#999;'>{{orderDetail.deal_name}}({{orderDetail.sub_id==3?'枕头+药包':'药包'}})</text>
+        <view>
+          <text style='color:red;'>￥{{orderDetail.per_price}}</text>
+          <text style='color:#999;' space='nbsp'>X {{orderDetail.amount}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='order_list_item1_line2' style='border:0;'>
+      <view>
+        <text>应付款：</text>
+        <text>￥{{orderDetail.total_price}}</text>
+      </view>
+      <view>
+        <text>实付款：</text>
+        <text>￥{{orderDetail.real_pay}}</text>
+        <text>（免运费）</text>
+      </view>
+    </view>
+    <view class='refund' style='display:{{applyType == 1?"":"none"}}'>
+      <button type='default' bindtap='applyRefund'>申请退款</button>
+    </view>
+    <view class='after_sale' style='display:{{applyType == 2?"":"none"}}'>
+      <button type='default' bindtap='applyRefund'>申请售后</button>
+    </view>
+  </view>
+  <view class='contact'>
+    <view style='border-right:1px solid #eee;'>
+      <!-- <image src='{{pictureUrl}}onlineService.png'></image> -->
+      <button class='online_service' open-type='contact'> 在线客服</button>
+    </view>
+    <view>
+      <!-- <image src='{{pictureUrl}}call.png'></image> -->
+      <text class='call' bindtap='call'> 拨打电话</text>
+    </view>
+  </view>
+  <view class='order_info' style='padding-bottom:{{btnType == 2?"15px":"60px"}}'>
+    <view>
+      <text>订单编号：</text>
+      <text>{{orderDetail.order_sn}}</text>
+    </view>
+    <view style='display:flex;align-items:center'>
+      <text>物流编号：</text>
+      <text>{{orderDetail.express_num?orderDetail.express_num:"暂未发货"}}</text>
+      <text style='font-size:12px' wx:if='{{orderDetail.express_num}}' bindtap='copyExpNum' space='nbsp'> 点此复制编号</text>
+    </view>
+    <view>
+      <text>支付方式：</text>
+      <text>微信</text>
+    </view>
+    <view>
+      <text>下单时间：</text>
+      <text>{{orderDetail.create_time}}</text>
+    </view>
+    <view style='display:{{timeType == 1||timeType == 2||timeType == 3?"":"none"}}'>
+      <text>付款时间：</text>
+      <text>{{orderDetail.create_time}}</text>
+    </view>
+    <view style='display:{{(timeType == 2||timeType == 3)?"":"none"}}'>
+      <text>发货时间：</text>
+      <text>{{orderDetail.end_time}}</text>
+    </view>
+    <view style='display:{{(timeType == 3)?"":"none"}}'>
+      <text>交易完成：</text>
+      <text>{{orderDetail.receive_time}}</text>
+    </view>
+  </view>
+  <view class='orderbtn'>
+    <view class='order_btn'>
+      <button data-orderid='{{orderDetail.id}}' bindtap='cancel_order' type='default' style='display:{{btnType == 1?"":"none"}}'>取消订单</button>
+      <!-- <button type='default' style='display:{{btnType == 4?"":"none"}}'>删除订单</button> -->
+      <!-- <button type='default' bindtap='checkLogistics' style='display:{{(btnType == 3||btnType == 4)?"":"none"}}'>查看物流</button> -->
+      <button type='warn' bindtap='makeComment' style='display:{{btnType == 4?"":"none"}}'>立即评价</button>
+      <button bindtap='confirmReceive' data-orderid='{{orderDetail.id}}' type='warn' style='display:{{btnType == 3?"":"none"}}'>确认收货</button>
+      <button bindtap='goPay' type='warn' style='display:{{btnType == 1?"":"none"}}'>去支付</button>
+    </view>
+  </view>
+</view>
+<!-- 已评价 -->
+<view wx:if="{{refund == 1}}">
+  <!-- <view class='head'>
+    <view style='color:red;line-height:27px;'>
+      <text>{{headInfo1}}</text>
+      <text style='font-size:14px;'>{{headInfo2}}</text>
+    </view>
+  </view>
+  <view style='line-height:50px;padding-left:10px;background-color:#fff;'>
+    等待商家确认无误后，将操作退款给您
+  </view>
+  <view class='refundChoose'>
+    <view>
+      <text class='round'></text>
+      <text class='term'>如商家拒绝退款,请重新申请</text>
+    </view>
+    <view>
+      <text class='round'></text>
+      <text class='term'>如商家超时未处理,系统将自动退款给您。</text>
+    </view>
+    <view class='btn'>
+      <button class='removeBtn'>撤销申请</button>
+      <button class='editBtn'>修改申请</button>
+    </view>
+  </view> -->
+  <view style='line-height:50px;padding-left:30px;'>
+    订单信息
+  </view>
+  <view class="order_list_item1" style='margin-top:0;margin-bottom:60px;'>
+    <view class='order_list_item1_line1'>
+      <view>
+        <image src='{{requestUrl}}{{orderDetail.img}}'></image>
+      </view>
+      <view class='order_list_item1_line1_info'>
+        <text style='font-size:14px;'>{{orderDetail.brief}}</text>
+        <text style='font-size:14px;color:#999;'>{{orderDetail.deal_name}}</text>
+      </view>
+    </view>
+    <view class='rofundInfo1'>订单编号：
+      <text>{{orderDetail.order_sn}}</text>
+    </view>
+    <view class='rofundInfo1'>物流编号：
+      <text>{{orderDetail.express_num}}</text>
+      <text>{{orderDetail.express_num?orderDetail.express_num:"暂未发货"}}</text><text style='font-size:12px' wx:if='{{orderDetail.express_num}}' bindtap='copyExpNum' space='nbsp'> 点此复制编号</text>
+    </view>
+    <view class='rofundInfo1'>支付金额：
+      <text>￥{{orderDetail.total_price}}</text>
+    </view>
+    <view class='rofundInfo1'>下单时间：
+      <text>{{orderDetail.create_time}}</text>
+    </view>
+    <view class='rofundInfo1'>付款时间：
+      <text>{{orderDetail.create_time}}</text>
+    </view>
+    <view class='rofundInfo1'>发货时间：
+      <text>{{orderDetail.end_time}}</text>
+    </view>
+    <view class='rofundInfo1'>完成时间：
+      <text>{{orderDetail.receive_time}}</text>
+    </view>
+  </view>
+  <view class='orderbtn'>
+    <view class='order_btn'>
+      <button type='default' bindtap='oneMore'>再来一单</button>
+    </view>
+  </view>
+</view>
+<!--退款中  -->
+<view wx:if="{{refund == 2}}">
+  <view class='head'>
+    <view style='color:red;line-height:27px;'>
+      <text>{{headInfo1}}</text>
+      <text style='font-size:14px;'>{{headInfo2}}</text>
+    </view>
+  </view>
+  <view style='line-height:50px;padding-left:10px;background-color:#fff;'>
+    等待商家确认无误后，将操作退款给您
+  </view>
+  <view class='refundChoose'>
+    <view>
+      <text class='round'></text>
+      <text class='term'>如商家拒绝退款,请重新申请</text>
+    </view>
+    <view>
+      <text class='round'></text>
+      <text class='term'>如商家超时未处理,系统将自动退款给您。</text>
+    </view>
+    <view class='btn'>
+      <button class='removeBtn'>撤销申请</button>
+      <button class='editBtn'>修改申请</button>
+    </view>
+  </view>
+  <view style='line-height:50px;padding-left:30px;'>
+    退款信息
+  </view>
+  <view class="order_list_item1" style='margin-top:0;margin-bottom:60px;'>
+    <view class='order_list_item1_line1'>
+      <view>
+        <image src=''></image>
+      </view>
+      <view class='order_list_item1_line1_info'>
+        <text style='font-size:14px;'>阿斯加德哈三季度卡接收到看见阿萨德卡接收到哈尽快圣诞节安徽省</text>
+        <text style='font-size:14px;color:#999;'>枕头+药包</text>
+      </view>
+    </view>
+    <view class='rofundInfo1'>退款原因：
+      <text>地址错了</text>
+    </view>
+    <view class='rofundInfo1'>退款金额：
+      <text>￥1776</text>
+    </view>
+    <view class='rofundInfo1'>申请数量：
+      <text>2</text>
+    </view>
+    <view class='rofundInfo1'>申请时间：
+      <text>2018-07-12 12:12:12</text>
+    </view>
+    <view class='rofundInfo1'>退款编号：
+      <text>123456789</text>
+    </view>
+  </view>
+  <view class='orderbtn'>
+    <view class='order_btn'>
+      <button type='default'>在线客服</button>
+    </view>
+  </view>
+</view>
+<!-- 联系客服提示页 -->
+<view class='contactPage' style='display:{{isContact}};'>
+  <view class='contactBox'>
+    <view>请联系在线客服！</view>
+    <view bindtap='close'>确认</view>
+  </view>
+</view>

@@ -1,0 +1,42 @@
+/* pages/address/address.wxss */
+.address_item{
+  background-color: #fff;
+  margin-top: 10px;
+}
+.address_item image{
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+.address_item1{
+  padding: 0 10px;
+  padding-top: 20px;
+}
+.address_item2{
+  padding: 15px 10px 20px 10px;
+}
+.address_item3{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #eee;
+  height: 50px;
+  padding: 0 10px;
+}
+.address_item3 button{
+  width: 55px;
+  padding: 4px 8px;
+  margin: unset;
+  line-height: unset;
+  font-size: 16px;
+}
+.add_address{
+  text-align: center;
+  background-color: #fd0047;
+  color: #fff;
+  line-height: 50px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}

@@ -1,0 +1,348 @@
+/* pages/myOrderDetail/myOrderDetail.wxss */
+@import '../myOrder/myOrder.wxss';
+
+.head {
+  display: flex;
+  padding: 20px 30px;
+  justify-content: space-between;
+}
+
+.head view {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.head image {
+  width: 80px;
+  height: 50px;
+}
+
+.shadow {
+  width: 80px;
+  height: 4px;
+  border-radius: 50%;
+  box-shadow: 0px -5px 5px gray;
+}
+
+.address {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10px;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.address1 {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.address image {
+  width: 20px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.address button {
+  height: 25px;
+  width: 50px;
+  color: #2fcafa;
+  line-height: unset;
+  padding: 0 5px;
+  font-size: 16px;
+}
+
+.address button::after {
+  border-color: #2fcafa;
+}
+
+.contact {
+  display: flex;
+  height: 60px;
+  background-color: #fff;
+  align-items: center;
+  border-top: 1px solid #eee;
+  justify-content: space-around;
+}
+
+.contact view {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+}
+
+.contact image {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  align-self: center;
+}
+
+.online_service::after {
+  border: none;
+}
+
+.online_service::before {
+  content: ' ';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(https://sgc.runde.pro/public/img/xcx/onlineService.png) no-repeat;
+  background-size: 100% 100%;
+}
+.call::before {
+  content: ' ';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(https://sgc.runde.pro/public/img/xcx/call.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.online_service {
+  padding: 0;
+  line-height: unset;
+  margin: 0;
+  background: #fff;
+  font-size: 16px;
+}
+
+.pay {
+  margin: 10px 0;
+}
+
+.pay label {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+  padding: 0 10px;
+  background-color: #fff;
+}
+
+.pay label:first-child {
+  border-bottom: 1px solid #eee;
+}
+
+.pay image {
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+/* 未选中的 背景样式 */
+
+checkbox .wx-checkbox-input {
+  border-radius: 50%; /* 圆角 */
+  width: 40rpx; /* 背景的宽 */
+  height: 40rpx; /* 背景的高 */
+}
+
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  border-color: red;
+  /* background: red;  */
+}
+
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%; /* 圆角 */
+  width: 40rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 40rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx; /* 对勾大小 30rpx */
+  color: red; /* 对勾颜色 白色 */
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+/* 未选中的 背景样式 */
+
+radio .wx-radio-input {
+  border-radius: 50%; /* 圆角 */
+  width: 40rpx; /* 背景的宽 */
+  height: 40rpx; /* 背景的高 */
+}
+
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+
+radio .wx-radio-input.wx-radio-input-checked {
+  border-color: red !important;
+  background: unset !important;
+}
+
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+  border-radius: 50%; /* 圆角 */
+  width: 40rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 40rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx; /* 对勾大小 30rpx */
+  color: red; /* 对勾颜色 白色 */
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.order_info {
+  padding: 15px 10px;
+  background-color: #fff;
+  color: #999;
+  line-height: 24px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.orderbtn {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #eee;
+  z-index: 99;
+}
+
+.after_sale, .refund {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+
+.order_btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: #fff;
+}
+
+.order_btn button {
+  width: 100px;
+  font-size: 16px;
+  margin: 5px 0;
+  margin-right: 10px;
+}
+
+.refund button {
+  width: 100px;
+  font-size: 16px;
+  margin: 5px 0;
+  margin-right: 10px;
+}
+
+.after_sale button {
+  width: 100px;
+  font-size: 16px;
+  margin: 5px 0;
+  margin-right: 10px;
+}
+
+.order_list_return {
+  text-align: right;
+  padding-right: 10px;
+  font-size: 14px;
+  color: orange;
+  height: 50px;
+  line-height: 50px;
+}
+
+/*退款中  */
+
+.refundChoose {
+  height: 110px;
+  padding-top: 10px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+
+.round {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #bebebe;
+  border-radius: 50%;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+.term {
+  font-size: 14px;
+  color: #bebebe;
+  letter-spacing: 1px;
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50px;
+  justify-content: flex-end;
+}
+
+.btn button {
+  width: 100px;
+  /* height: 30px; */
+  border-radius: 5px;
+  font-size: 16px;
+  /* line-height: 30px; */
+  margin-left: 0;
+  margin-top: 15px;
+  /* background-color: #fff; */
+}
+
+.removeBtn {
+  margin-right: 15px;
+}
+
+.editBtn {
+  margin-right: 10px;
+}
+
+.rofundInfo1 {
+  font-size: 14px;
+  color: #bebebe;
+  line-height: 25px;
+  padding-left: 10px;
+}
+
+.contactPage {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+}
+
+.contactBox {
+  width: 400rpx;
+  height: 200rpx;
+  background-color: #fff;
+  border-radius: 25px;
+}
+
+.contactBox view {
+  height: 50%;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 18px;
+}
+
+.contactBox view:last-child {
+  border-top: 1px solid #eee;
+  color: #2fcafa;
+}

@@ -1,0 +1,15 @@
+<view class='detailCon con_column'>
+  <view wx:for='{{withInfo}}' wx:key='{{index}}' class='detailList con_row'>
+    <view class='detailTime'>
+      <text>时间</text>
+      <text>{{item.date}}</text>
+    </view>
+    <view class='detailType'>
+      <view>
+        <!-- <text wx:if='{{item.state == 0}}' style='font-size:12px;color:red;'>（冻结中）</text> -->
+        <text>{{item.note}}</text>
+      </view>
+      <text style='float:right'>{{item.number}}</text>
+    </view>
+  </view>
+</view>

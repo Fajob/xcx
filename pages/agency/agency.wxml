@@ -1,0 +1,40 @@
+<view class='info'>
+    <view class='info1' bindtap='stocks'>
+      <view>
+        枕头数量
+        <text style='color:yellow;font-size:30px;'> {{userInfo.z_num}} </text>件
+        <view style='font-size:12px;text-align:center'>(点击查看详情)</view>
+      </view>
+      <view>
+        药包数量
+        <text style='color:yellow;font-size:30px;'> {{userInfo.y_num}} </text>件
+        <view style='font-size:12px;text-align:center'>(点击查看详情)</view>
+      </view>
+    </view>
+  <view class='info1_btn'>
+    <button wx:if='{{userInfo.proxy==2}}' bindtap='applyAgency' style='font-size:12px;line-height:18px'>审核不通过,重新申请</button>
+    <button wx:else bindtap='applyAgency'>{{process}}</button>
+    <button bindtap='orderShip' disabled='{{userInfo.proxy==3?"":"true"}}'>我要发货</button>
+  </view>
+</view>
+<view class='order_list'>
+  <text style='line-height:50px;color:#2fcafa;padding:0 10px;'>发货订单</text>
+  <view class="table">
+    <view class="tr bg-w">
+      <view class="th">时间</view>
+      <view class="th">用户</view>
+      <view class="th">状态</view>
+      <view class="th">操作</view>
+    </view>
+    <block wx:for="{{agencyOrder}}" wx:key="{{index}}">
+      <view class="tr bg-g">
+        <view class="td">{{item.time}}</view>
+        <view class="td">{{item.reciver_mobile}}</view>
+        <view class="td" style='color:red;'>{{item.status==0?"未发货":"已发货"}}</view>
+        <view class="td">
+          <button bindtap='orderDetail' data-url='{{item.agencyOrder_detail}}'>订单详情</button>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,51 @@
+/**app.wxss**/
+
+.container {
+  font-size: 14px;
+  background-color: #fff;
+}
+
+page {
+  background-color: #f3f3f3;
+  font-size: 16px;
+}
+
+/* 王文涛 */
+
+.clear {
+  clear: both;
+}
+
+.con_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.con_column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.con_column_left {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.justify-content {
+  justify-content: space-around;
+}
+
+.none {
+  display: none !important;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: #008004;
+}

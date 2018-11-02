@@ -1,0 +1,19 @@
+/* pages/agencyOrderDetail/agencyOrderDetail.wxss */
+page{
+  background-color: #fff;
+}
+.item{
+  min-height: 50px;
+  padding: 0 10px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+}
+.item .cont{
+  color: #2fcafa;
+}
+.word_justify{
+  width: 80px;
+  display: flex;
+  justify-content: space-between;
+}

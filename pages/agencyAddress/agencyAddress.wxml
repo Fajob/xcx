@@ -1,0 +1,59 @@
+<form bindsubmit='ship'>
+  <view class='address_info'>
+    <view class='address_item'>
+      <view>收货人：</view>
+      <view>
+        <input name='rName' placeholder='请输入收货人姓名'></input>
+      </view>
+    </view>
+    <view class='address_item'>
+      <view>手机号：</view>
+      <view>
+        <input name='rMobile' placeholder='请输入收货人联系电话'></input>
+      </view>
+    </view>
+    <view class='address_item'>
+      <view class='word_justify'>
+        <text>枕</text>
+        <text>头：</text>
+      </view>
+      <view>
+        <input name='z_num' placeholder='请输入购买枕头数量（可输0）'></input>
+      </view>
+    </view>
+    <view class='address_item'>
+      <view class='word_justify'>
+        <text>药</text>
+        <text>包：</text>
+      </view>
+      <view>
+        <input name='y_num' placeholder='请输入购买药包数量（可输0）'></input>
+      </view>
+    </view>
+  </view>
+  <view class='address_info'>
+    <view class='address_item'>
+      <view>所在地区：</view>
+      <view>
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+          <view class="picker" style='color:{{color}};'>
+            {{region[0]}}，{{region[1]}}，{{region[2]}}
+            <image src='{{pictureUrl}}step_in.png'></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='address_item'>
+      <view>详细地址：</view>
+      <view>
+        <input name='address_1' placeholder='请输入镇、街道、门牌号等'></input>
+      </view>
+    </view>
+  </view>
+  <view class='notice'>
+    <text>提示：提交订单后，商家会在24小时内对您的订单进行处理，逾时未处理请联系在线客服。</text>
+  </view>
+  <view>
+    <button style='margin-top:80px' form-type='submit'>提交</button>
+  </view>
+</form>

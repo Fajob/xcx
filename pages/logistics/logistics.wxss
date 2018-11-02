@@ -1,0 +1,87 @@
+/* pages/logistics/logistics.wxss */
+@import '../myOrder/myOrder.wxss';
+
+page {
+  background-color: #fff;
+}
+
+.order_list_item1_line1 {
+  border-top: 10px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.order_list_item1_line1_info {
+  justify-content: center;
+  line-height: 22px;
+}
+
+.logistics_address {
+  color: #2fcafa;
+  line-height: 22px;
+  padding: 15px 10px;
+  word-break: break-all;
+}
+.logistics_detail{
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.current{
+  color: red;
+}
+.curInfo{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.info{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.circle_icon{
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.circle{
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #d8d8d8;
+}
+.circle1{
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #d8d8d8;
+}
+.circle1::after{
+  content: '';
+  height: 77px;
+  width: 1px;
+  background-color: #d8d8d8;
+  position: relative;
+  display: block;
+  left: 50%;
+  top: 100%;
+}
+.curCircle{
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: red;
+}
+.curCircle::after{
+  content: '';
+  height: 100px;
+  width: 1px;
+  background-color: #d8d8d8;
+  position: relative;
+  display: block;
+  left: 50%;
+  top: 100%;
+}

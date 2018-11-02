@@ -1,0 +1,75 @@
+/* pages/myOrderSettlement/myOrderSettlement.wxss */
+@import '../myOrderDetail/myOrderDetail.wxss';
+.order_list_item1_line2 {
+  font-size: unset;
+  text-align: unset;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.stlNum{
+  background-color: #eee;
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+  min-width: 30px;
+  align-self: center;
+}
+.stlDiscount{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.stlPay{
+  display: flex;
+  background-color: #fff;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.stlPaylt{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  padding: 0 10px;
+}
+.stlBtn{
+  width: 40%;
+  line-height: 50px;
+  background-color: #fd0047;
+  color: #fff;
+  text-align: center;
+}
+.pay1{
+  margin-bottom: 60px;
+}
+.confirm{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, .3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.confirm_box{
+  width: 550rpx;
+  height: 400rpx;
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around
+}
+.confirm_box button{
+  width:200rpx;
+  line-height:40px;
+  background:#2fcafa;
+  color:#fff;
+}

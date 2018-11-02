@@ -1,0 +1,56 @@
+<view class='my_order_title'>
+  <block wx:for="{{orderTypes}}" wx:key='{{index}}'>
+    <view id='{{index}}' class='{{index == id?"active":""}}' bindtap='toggle'>{{item}}</view>
+  </block>
+</view>
+<!-- 订单 -->
+<view wx:for='{{orderList}}' wx:key='{{item.id}}' class='order_list_item1'>
+  <navigator url='{{item.orderDetail_url}}' hover-class='none'>
+    <view class='order_list_item1_line1'>
+      <view>
+        <image src='{{requestPicture}}{{item.img}}'></image>
+      </view>
+      <view class='order_list_item1_line1_info'>
+        <text style='font-size:14px;'>{{item.brief}}</text>
+        <text style='font-size:14px;color:#999;'>{{item.deal_name}}({{item.sub_id==3?'枕头+药包':'药包'}})</text>
+        <view>
+          <text style='color:red;'>￥{{item.per_price}}</text>
+          <text style='color:#999;' space='nbsp'>X {{item.amount}}</text>
+        </view>
+      </view>
+    </view>
+  </navigator>
+  <view class='order_list_item1_line2'>
+    <view>
+      <text>应付款：</text>
+      <text>￥{{item.total_price}}</text>
+    </view>
+    <view>
+      <text>实付款：</text>
+      <text>￥{{item.real_pay}}</text>
+      <text>（免运费）</text>
+    </view>
+  </view>
+  <view wx:if="{{item.order_status == 0}}" class='order_list_item1_line3'>
+    <button type='default' bindtap='cancel_order' data-orderid='{{item.id}}'>取消订单</button>
+    <button bindtap='goPay' data-orderid='{{item.id}}' type='warn'>去支付</button>
+  </view>
+  <view wx:if="{{item.order_status == 1}}" class='order_list_return'>
+    <text style='color:red;'>待发货</text>
+  </view>
+  <view wx:if="{{item.order_status == 2}}" class='order_list_item1_line3'>
+    <!-- <button type='default' bindtap='checkLogistics'>查看物流</button> -->
+    <button type='warn' bindtap='confirmReceive' data-orderid='{{item.id}}'>确认收货</button>
+  </view>
+  <view wx:if="{{item.order_status == 3}}" class='order_list_item1_line3'>
+    <!-- <button type='default'>删除订单</button> -->
+    <button type='warn' data-url='{{item.comment_url}}' bindtap='makeComment'>立即评价</button>
+  </view>
+  <view wx:if="{{item.order_status == 4}}" class='order_list_return'>
+    <text style='color:red;'>已评价</text>
+  </view>
+</view>
+<!--没有更多  -->
+<view style='font-size:14px;text-align:center;line-height:60px;color:#666;'>
+  没有更多了...
+</view>

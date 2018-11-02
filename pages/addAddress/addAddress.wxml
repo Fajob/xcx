@@ -1,0 +1,48 @@
+<form data-form="{{form}}" bindsubmit='addSubmit'>
+
+    <view class='address_info'>
+        <view class='address_item'>
+            <view>收货人：</view>
+            <view>
+                <input name="user_name" placeholder='请输入收货人姓名' value='{{obj.user_name}}'></input>
+            </view>
+        </view>
+        <view class='address_item'>
+            <view>手机号：</view>
+            <view>
+                <input value='{{obj.user_phone}}' name="user_phone" placeholder='请输入收货人联系电话'></input>
+            </view>
+        </view>
+    </view>
+    <view class='address_info'>
+        <view class='address_item'>
+            <view>所在地区： </view>
+            <view>
+                <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+                    <view class="picker" style='color:{{color}};'>
+                        {{region[0]}},{{region[1]}},{{region[2]}}
+                        <input name="address" style='width:0;height:0' value='{{region}}' />
+                        <image src='{{pictureUrl}}step_in.png'></image>
+                    </view>
+                </picker>
+            </view>
+        </view>
+        <view class='address_item'>
+            <view>详细地址：</view>
+            <view>
+                <input name="address1" placeholder='请输入镇、街道、门牌号等' value='{{obj.address1}}'></input>
+            </view>
+            <input name="user_id" style='width:0;height:0' value='{{id}}' />
+            <input name="s_id" style='width:0;height:0' value='{{s_id}}' />
+            <input wx:if='{{obj.address_id}}' name="address_id" style='width:0;height:0' value='{{obj.address_id}}' />
+        </view>
+        <view class='address_item'>
+            <!-- <checkbox name="is_default" value='{{checked=="false"?"1":"0"}}' data-checked="{{checked}}" checked='{{is_default=="0"?"":"checked"}}' bindtap='change' />设置为默认地址 -->
+             <checkbox data-is_default="{{is_default}}" checked='{{is_default=="0"?"":"checked"}}' bindtap='change' />设置为默认地址
+             <input name="is_default" style='width:0;height:0' value='{{is_default}}' /> 
+        </view>
+    </view>
+    <view>
+        <button form-type='submit'>保存</button>
+    </view>
+</form>

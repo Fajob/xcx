@@ -1,0 +1,32 @@
+<view class='balanceInfo'>
+  <view class='balance'>
+    <view class='balance_item1'>
+      <view style='font-size:14px;margin-bottom:20px;'>可用余额(元)</view>
+      <view style='font-size:24px;'>{{yue}}</view>
+    </view>
+    <view class='balance_item2'>
+      <view style='font-size:14px;margin-bottom:20px;'>冻结余额(元)</view>
+      <view style='font-size:24px;'>{{suoding_yue}}</view>
+    </view>
+  </view>
+  <view class='choose'>
+    <navigator url='{{url}}' class='con_row justify-content' hover-class='none'>
+      <view class='con_row'>
+        <image class='icon' src='{{pictureUrl}}tixian.png'></image>
+        <text>提现</text>
+      </view>
+      <view>
+        <image class='right' src='{{pictureUrl}}step_in.png'></image>
+      </view>
+    </navigator>
+    <navigator url='../withdrawDetail/withdrawDetail' class='con_row justify-content' hover-class='none'>
+      <view class='con_row'>
+        <image class='icon' src='{{pictureUrl}}mingxi.png'></image>
+        <text>明细</text>
+      </view>
+      <view>
+        <image class='right' src='{{pictureUrl}}step_in.png'></image>
+      </view>
+    </navigator>
+  </view>
+</view>

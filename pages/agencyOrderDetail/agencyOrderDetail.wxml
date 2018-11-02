@@ -1,0 +1,32 @@
+<view class='item'>
+  <view class='word_justify'><text>时</text><text>间：</text></view> 
+  <text class='cont'>{{agencyOrderDetail.time}}</text>
+</view>
+<view class='item'>
+  <view class='word_justify'><text>收</text><text>货</text><text>人：</text></view> 
+  <text class='cont'>{{agencyOrderDetail.reciver_name}}</text>
+</view>
+<view class='item'>
+<view class='word_justify'><text>手</text><text>机</text><text>号：</text></view> 
+  <text class='cont'>{{agencyOrderDetail.reciver_mobile}}</text>
+</view>
+<view class='item'>
+  <text style='white-space:nowrap;'>收货地址：</text>
+  <text class='cont'>{{agencyOrderDetail.reciver_address}}{{agencyOrderDetail.reciver_address_1}}</text>
+</view>
+<view class='item'>
+  <text>枕头数量：</text>
+  <text class='cont'>{{agencyOrderDetail.z_num}}</text>
+</view>
+<view class='item'>
+  <text>药包数量：</text>
+  <text class='cont'>{{agencyOrderDetail.y_num}}</text>
+</view>
+<view class='item'>
+  <view class='word_justify'><text>状</text><text>态：</text></view> 
+  <text class='cont'>{{agencyOrderDetail.status==0?"未发货":"已发货"}}</text>
+</view>
+<view wx:if='{{agencyOrderDetail.package_sn}}' class='item'>
+  <text>快递单号：</text>
+  <text class='cont'>{{agencyOrderDetail.package_sn}}</text>
+</view>

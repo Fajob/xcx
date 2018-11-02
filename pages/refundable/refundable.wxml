@@ -1,0 +1,18 @@
+<view>
+     <view class='order' style='height:auto'>
+        <view class='orderInfo'>
+            <view class='orderImg'><image src='{{pictureUrl}}property.jpg'></image></view>
+            <view class='con_column_left'>
+                <text class='infoIntroduce'>颈椎枕头修复颈椎专用护颈监测睡眠质量枕成人矫正颈椎病中药理疗透</text>
+                <text style='color:#999;margin:10px 0'>枕头+药包</text>
+                <view class='orderPrice con_row'>
+                    <text style='color:red'></text>
+                    <text style='padding-right:10px;color:#999'>×2</text>
+                </view>
+            </view>
+        </view>
+        <view class='btn'>
+            <button class='goPayBtn' bindtap='checkDetail'>查看详情</button>
+        </view>
+    </view>
+</view>

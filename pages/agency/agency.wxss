@@ -1,0 +1,79 @@
+/* pages/agency/agency.wxss */
+
+page {
+  background-color: #fff;
+}
+
+.info {
+  padding: 0 20px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  background-color: #2fcafa;
+}
+.info1,.info1_btn{
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info1_btn button {
+  width: 110px;
+  color: #2fcafa;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 25px;
+  margin: unset;
+  font-size: 16px;
+}
+
+.order_list{
+  border-top: 10px solid #f8f8f8;
+}
+.table {
+  border: none;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+}
+
+.td {
+  width: 25%;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  overflow-wrap: break-word;
+}
+.td button{
+  font-size: 14px;
+  line-height: unset;
+  background-color: #2fcafa;
+  color: #fff;
+  padding: 5px;
+  width: 80px;
+  border-radius: 25px;
+}
+
+.bg-w {
+  background: #96a5b1;
+}
+
+.bg-g {
+  border-bottom: 1px solid #eee;
+}
+
+.th {
+  width: 25%;
+  justify-content: center;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}

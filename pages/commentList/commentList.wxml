@@ -1,0 +1,28 @@
+<view>
+  <view wx:for='{{comments}}' wx:key='{{index}}' class='exp_item'>
+    <view class='exp1'>
+      <view class='exp1_img'>
+        <image src='{{item.imgurl}}'></image>
+        <text>{{item.nick}}</text>
+      </view>
+      <view>{{item.time}}</view>
+    </view>
+    <view class='comment2'>
+      {{item.comment}}
+    </view>
+    <view class='comment3'>
+      <view wx:if='{{item.img1}}' class="list-dImg">
+        <image bindtap="imgYu" data-img1='{{item.img1}}' data-img2='{{item.img2}}' data-img3='{{item.img3}}' data-src='{{requestUrl}}{{item.img1}}' src="{{requestUrl}}{{item.img1}}"></image>
+      </view>
+      <view wx:if='{{item.img2}}' class="list-dImg">
+        <image bindtap="imgYu" data-img1='{{item.img1}}' data-img2='{{item.img2}}' data-img3='{{item.img3}}' data-src='{{requestUrl}}{{item.img2}}' src="{{requestUrl}}{{item.img2}}"></image>
+      </view>
+      <view wx:if='{{item.img3}}' class="list-dImg">
+        <image bindtap="imgYu" data-img1='{{item.img1}}' data-img2='{{item.img2}}' data-img3='{{item.img3}}' data-src='{{requestUrl}}{{item.img3}}' src="{{requestUrl}}{{item.img3}}"></image>
+      </view>
+    </view>
+  </view>
+  <view style='font-size:14px;text-align:center;line-height:60px;color:#666;margin-top:-10px;'>
+    没有更多了...
+  </view>
+</view>

@@ -1,0 +1,38 @@
+/* pages/myExperience/myExperience.wxss */
+@import '../experience/experience.wxss';
+page{
+  background-color:#fff;
+}
+.rule{
+  padding: 15px;
+}
+.rule view{
+  padding: 15px 5px;
+  border: 1px solid red;
+  color: red;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.user_exp{
+  border-bottom: 1px solid #eee;
+}
+.red_dot::after{
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  margin-top: -16px;
+  margin-left: -4px;
+}
+.red_dot1::after{
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  margin-top: 16px;
+  margin-left: -2px;
+}

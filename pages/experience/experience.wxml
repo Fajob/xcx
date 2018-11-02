@@ -1,0 +1,65 @@
+<!--用户体验  -->
+<view>
+  <view wx:for='{{userExp}}' wx:key='{{index}}' class='exp_item'>
+    <view class='exp1'>
+      <view class='exp1_img'>
+        <image src='{{item.imgurl}}'></image>
+        <view>
+          <text>{{item.nick}}</text>
+          <view style='font-size:12px;'>{{item.time}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='exp2'>
+      <!-- 图片、视频 -->
+      <view class='exp2_img' wx:if='{{item.hasImg == true && item.video1 == ""}}'>
+        <image wx:if='{{item.img1 != ""||item.img2 != ""||item.img3 != ""}}' catchtap='imgYu' data-src1='{{item.img4?item.img4:(item.img5?item.img5:(item.img6?item.img6:""))}}' data-src='{{item.img1?item.img1:(item.img2?item.img2:(item.img3?item.img3:""))}}'
+          src='{{requestUrl}}{{item.img1?item.img1:(item.img2?item.img2:(item.img3?item.img3:""))}}'></image>
+        <image wx:if='{{item.img4 != ""||item.img5 != null||item.img6 != null}}' catchtap='imgYu' data-src1='{{item.img1?item.img1:(item.img2?item.img2:(item.img3?item.img3:""))}}' data-src='{{item.img4?item.img4:(item.img5?item.img5:(item.img6?item.img6:""))}}'
+          src='{{requestUrl}}{{item.img4?item.img4:(item.img5?item.img5:(item.img6?item.img6:""))}}'></image>
+      </view>
+      <!-- 图片 -->
+      <view class='exp2_video' data-id='{{index}}' data-video='{{item.video1}}' catchtap='play' wx:if='{{item.video1 != "" && preimg_video != index}}'>
+        <image style='width:100%;height:100%;' src='{{requestUrl}}{{item.v1_pre_img}}'></image>
+        <view class='exp2_play'>
+          <image class='img_play' src='{{pictureUrl}}play.png'></image>
+        </view>
+        <text>{{item.v1_time}}</text>
+      </view>
+      <!-- 视频 -->
+      <view class='exp2_video' wx:if='{{item.video1 != "" && preimg_video == index}}'>
+        <video autoplay='true' bindended='showPreimg' style='width:100%;height:100%;' src='{{requestUrl}}{{showUrl}}' objectFit='fill'></video>
+      </view>
+      <view class='exp2_txt' catchtap='goto' data-url='{{item.exp_module}}'>{{item.txt1}}</view>
+    </view>
+    <view class='funs'>
+      <view bindtap='like' data-index='{{item.id}}' class='mui-icon-extra {{item.has_rate==0?"":"actives"}}'>
+        <image src='{{pictureUrl}}{{item.has_rate==0?"like_dark.png":"like_light.png"}}'></image>
+        <text>{{item.rate_num}}</text> </view>
+      <navigator style='display:unset;margin-left:30px;' url='{{item.exp_module}}' hover-class='none'>
+        <view style='margin-left:0;' class='mui-icon-extra'>
+          <image src='{{pictureUrl}}comment.png'></image>
+          <text>{{item.comment_num}}</text>
+        </view>
+      </navigator>
+      <view class='mui-icon-extra'>
+        <image src='{{pictureUrl}}share.png'></image>
+        <button data-share='{{item.id}}' open-type='share'>{{item.share_num}}</button>
+      </view>
+    </view>
+  </view>
+  <view style='font-size:14px;text-align:center;line-height:60px;color:#666;'>
+    没有更多了...
+  </view>
+</view>
+<!-- 播放视频 -->
+<!-- <view class='bigV' catchtouchmove='true' style='display:{{display}}'>
+  <view bindtap='hide' class='close'>×</view>
+  <video id='playVideo' src='{{requestUrl}}{{showurl}}' objectFit='fill'></video>
+</view> -->
+<!-- 上传体验 -->
+<view class='upload_box'>
+  <navigator url='../uploadExperience/uploadExperience' hover-class='none'>
+    <view class='upload_exp'>上传体验</view>
+  </navigator>
+</view>

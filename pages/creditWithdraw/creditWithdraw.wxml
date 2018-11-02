@@ -1,0 +1,17 @@
+<view class="withdrawCon">
+    <view class='balance'>
+        <text class='title'>可提现积分(1积分=1元)</text>
+        <text class='balancePrice'>2000.00</text>
+    </view>
+    <view class='moneyInfo'>
+        <text class='title'>提现积分</text>
+        <input type='number'  class='moneyNum' placeholder='请输入提现积分'/>
+    </view>
+    <view class='balanceType'>
+        <text class='title'>提现方式</text>
+        <text class='balanceAddress'>微信钱包：<text>188111111111</text></text>
+    </view>
+    <view class='btnBox con_row'>
+        <button>确认</button>
+    </view>
+</view>

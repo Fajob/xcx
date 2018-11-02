@@ -1,0 +1,36 @@
+<view>
+  <view class='creditInfo con_column'>
+    <view class='balance_item1'>
+      <view style='font-size:14px;margin-bottom:20px;'>可用红包（元）</view>
+      <view style='font-size:24px;color:red;'>{{jfInfo.jifen}}</view>
+    </view>
+    <view class='balance_item2'>
+      <view style='font-size:14px;margin-bottom:20px;'>冻结红包（元）</view>
+      <view style='font-size:24px;color:red;'>{{jfInfo.suoding_jifen}}</view>
+    </view>
+  </view>
+  <view class='creditTitle'>
+    <text>红包明细</text>
+  </view>
+  <view class='table'>
+    <view class='tr'>
+      <view class='th'>时间</view>
+      <view class='th'>红包（元）</view>
+      <view class='th'>状态</view>
+    </view>
+    <view class='tr' wx:for='{{creditInfo}}' wx:key='{{index}}'>
+      <view class='td'>
+        <text>{{item.date}}</text> 
+      </view>
+      <view class='td'>
+        <text>{{item.note=='奖励'?'+':''}}{{item.number}}</text>
+      </view>
+      <view class='td'>
+        <view>
+          <text>{{item.note}}</text>
+          <text wx:if='{{item.state == 0}}' class='red'>（冻结中）</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

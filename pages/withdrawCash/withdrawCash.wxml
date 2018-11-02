@@ -1,0 +1,20 @@
+<view class="withdrawCon">
+  <form bindsubmit='withdrawCash'>
+  <view class='balance'>
+    <text class='title'>可提现金额(元)</text>
+    <text class='balancePrice'>{{yue}}</text>
+  </view>
+  <view class='moneyInfo'>
+    <text class='title'>提现金额(元)</text>
+    <input type='number' class='moneyNum' name='cash' placeholder='请输入提现金额' />
+  </view>
+  <view class='balanceType'>
+    <text class='notice'>注意：提现金额须为100的倍数</text>
+    <!-- <text class='title'>提现方式</text>
+    <text class='balanceAddress'>微信钱包：<text>18877771111</text></text> -->
+  </view>
+  <view class='btnBox con_row'>
+    <button form-type='submit'>确认</button>
+  </view>
+  </form>
+</view>
